@@ -1,0 +1,5 @@
+---
+title: "Recent Posts"
+site: distill::distill_website
+listing: posts
+---

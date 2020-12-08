@@ -1,0 +1,20 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About me",
+      "description": "",
+      "author": [],
+      "contents": "\nHello, I’m Max! I have a BA in Physics and Geology from Carleton College in Northfield, MN and I’m currently a Biostatistics graduate student at Vanderbilt University in Nashville, TN. Before coming to Vanderbilt, I worked as an ORISE Fellow at the FDA Division of Antiviral Products in the Office of New Drugs, where I analyzed clinical trials for hepatitis and HIV medications. My interests are in adaptive clinical trial design, reproducible research, and statistics education.\nIn my free time I enjoy cooking (and collecting cookbooks), playing funk guitar, and swimming.\nYou can find my publications at my Google scholar page here.\n\n\n\n",
+      "last_modified": "2020-12-08T02:50:38-06:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Recent Posts",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2020-12-08T02:50:39-06:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}

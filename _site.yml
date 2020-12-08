@@ -1,0 +1,27 @@
+name: "distill_blog"
+title: "Max Rohde"
+author:
+  - first_name: "Maximilian"
+    last_name: "Rohde"
+    url: https://github.com/maxdrohde
+    affiliation: Vanderbilt University Department of Biostatistics
+    orcid_id: 0000-0002-3731-3372
+theme: theme.css
+base_url: https://maximilianrohde.com
+repository_url: https://github.com/maxdrohde/blog
+creative_commons: CC BY
+twitter:
+  site: "@MaxRohde8"
+description: ""
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - text: "Resume"
+      href: resume.pdf
+output:
+  distill::distill_article:
+
