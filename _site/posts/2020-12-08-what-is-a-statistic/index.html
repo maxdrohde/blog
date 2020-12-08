@@ -2389,7 +2389,20 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 </div>
+<h2 id="introduction">Introduction</h2>
+<p>When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include the mean, median, and the mode as statistics that represent measures of the center of the data.</p>
+<p>Other examples include the maximum observation in the data, the minimum, or the 3rd observation in the data, when the data are arranged from largest to smallest. These are called order statistics.</p>
+<aside>
+For example, the 3rd order statistic is written <span class="math inline">\(X_{(3)}\)</span>, where <span class="math inline">\(X\)</span> is a random vector denoting our sample.
+</aside>
+<p>We can even create arbitrary statistics that appear to have little use, such as adding the first and third elements of the data and dividing by 17.</p>
+<aside>
+<span class="math display">\[
+\text{Weird Statistic} = \frac{x_1 + x_3}{17}
+\]</span>
+</aside>
 <h2 id="simulating-statistics-of-dice-rolls">Simulating statistics of dice rolls</h2>
+<p>As a simple data-generating process, let’s consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers, <span class="math inline">\(x_1, x_2, x_3, x_4, x_5\)</span>, a sample.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
 <pre><code><span class='co'># A function to roll `n` dice</span>
@@ -2415,13 +2428,13 @@ d-appendix d-footnote-list a.footnote-backlink {
 </code></pre>
 </div>
 <pre><code>[[1]]
-[1] 4 3 6 2 6
+[1] 2 2 2 3 3
 
 [[2]]
-[1] 6 3 2 6 5
+[1] 2 3 3 6 1
 
 [[3]]
-[1] 6 4 3 2 5</code></pre>
+[1] 6 3 6 6 2</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
@@ -2491,6 +2504,15 @@ Figure 1: Various order statistics for rolls of 5 standard dice. Probabilities w
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->

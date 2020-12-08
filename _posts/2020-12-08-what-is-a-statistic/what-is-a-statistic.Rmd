@@ -21,7 +21,27 @@ library(tidyverse)
 library(extrafont)
 ```
 
+## Introduction
+
+When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include the mean, median, and the mode as statistics that represent measures of the center of the data.
+
+Other examples include the maximum observation in the data, the minimum, or the 3rd observation in the data, when the data are arranged from largest to smallest. These are called order statistics.
+
+<aside>
+For example, the 3rd order statistic is written $X_{(3)}$, where $X$ is a random vector denoting our sample.
+</aside>
+
+We can even create arbitrary statistics that appear to have little use, such as adding the first and third elements of the data and dividing by 17. 
+
+<aside>
+$$
+\text{Weird Statistic} = \frac{x_1 + x_3}{17}
+$$
+</aside>
+
 ## Simulating statistics of dice rolls
+
+As a simple data-generating process, let's consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers, $x_1, x_2, x_3, x_4, x_5$, a sample.
 
 ```{r}
 # A function to roll `n` dice
