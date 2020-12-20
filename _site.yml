@@ -20,6 +20,8 @@ navbar:
       href: index.html
     - text: "About"
       href: about.html
+    - text: "Animations"
+      href: anim.html
     - text: "Resume"
       href: resume.pdf
 output:

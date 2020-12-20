@@ -88,3 +88,7 @@ d-article h2 {
 d-article h3 {
 	font-size: 18px;
 }
+
+video {
+	padding-top: 10px;
+}
