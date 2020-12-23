@@ -3,3 +3,13 @@ title: "Recent Posts"
 site: distill::distill_website
 listing: posts
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  dev.args = list(bg = 'transparent')
+)
+library(tidyverse)
+```
+
+<img src="images/lik.gif" width=100%>
