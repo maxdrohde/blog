@@ -1,15 +1,19 @@
 ---
-title: "About me"
+title: "⠀"
 description: ""
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
 
-Hello, I’m Max. I have a BA in Physics and Geology from Carleton College in Northfield, MN and I'm currently a Biostatistics graduate student at Vanderbilt University in Nashville, TN.
+<div>
+<img src="images/me.png" alt="Max Rohde" width=25% style="float: left; margin-right: 30px; margin-bottom: 20px;">
 
-Before coming to Vanderbilt, I worked as an ORISE Fellow at the FDA Division of Antiviral Products in the Office of New Drugs, where I analyzed clinical trials for hepatitis and HIV medications. My interests are in adaptive clinical trial design, reproducible research, and statistics education.
+<p style="font-family: Lato; font-size: 18px;">Hello, I’m Max. I have a BA in Physics and Geology from [Carleton College](https://www.carleton.edu) and I'm currently a graduate student at Vanderbilt University in the [Department of Biostatistics](https://www.vumc.org/biostatistics/chair).</p>
+</div>
+
+## About me
+Before coming to Vanderbilt, I worked as an ORISE Fellow in the [FDA Division of Antivirals](https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-infectious-diseases-oid) (Office of New Drugs), where I built natural-language processing tools for product label data, and conducted meta-analyses of clinical trials for [hepatitis C](https://doi.org/10.1016/j.cgh.2020.08.042) and [HIV](https://www.croiconference.org/abstract/investigation-of-a-potential-composite-endpoint-for-immunologic-nonresponder-trials/) treatments. My interests are in adaptive clinical trial design, reproducible research, and statistics education.
+
+Before transitioning to biostatistics, I conducted research with the LIGO collaboration on [the effects of magnetic transients on gravitational wave detection](https://doi.org/10.1088/1361-6382/aa60eb) and worked at the Albuquerque Seismological Laboratory [studying the effects of atmospheric noise on seismometers](https://doi.org/10.1785/0220160193).
 
 In my free time I enjoy cooking (and collecting cookbooks), playing funk guitar, and swimming.
 
