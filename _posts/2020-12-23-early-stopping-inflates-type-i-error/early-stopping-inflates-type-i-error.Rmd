@@ -15,7 +15,7 @@ output:
 Does your astrological sign affect your height? Imagine that 20 scientists want to test this hypothesis. Each scientist, independently of the others, brings in 1000 pairs of twins -- one Taurus and one Leo -- and measures the difference in their heights. Assume that in reality, the null hypothesis is true: there is no difference in their heights. Of course, there is random variation that will make each twin's height different, but the null hypothesis is that the mean of this variation is zero.
 
 <aside>
-Especially for height, it's safe to assume that the variation in heights is normally distributed
+Especially for height, it's safe to assume that the variation in heights is normally distributed.
 </aside>
 
 Each scientists measures their 1,000 pairs of twins, conducts a t-test, and reports whether or not their statistical test has rejected the null hypothesis of no difference. If the null hypothesis is true (which we assume it is in this scenario), and the p-value threshold for significance is set at 0.05 = 1/20, we would expect that on average, 1 out of the 20 scientists would wrongly reject the null hypothesis when it is in fact true. This is the definition of a type I error rate. But what if the scientists took multiple looks at the data?
@@ -46,7 +46,7 @@ To verify our conclusions, let's run this simulation for 2,000 scientists instea
 As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> inflates indefinitely, reach almost 50% by 1,000 observations, while the <span style="color:#43658b">type I error rate at any given observation</span> remains controlled at the nominal value of 0.05.
 
 ## So how can we control type I error?
-How can we fix this problem? One approach is creating rules limiting the number of interim tests that can be conducted. For example, a topic of recent relevance, there was much debate over how many interim looks at the data there should be for the COVID-19 vaccine trials.
+How can we fix this problem? One approach is creating rules limiting the number of interim tests that can be conducted. For example, a topic of recent relevance, there was much debate over how many interim looks at the data there should be for the [COVID-19 vaccine trials](https://www.fda.gov/media/137926/download).
 
 Another approach is applying corrections to the p-value threshold to ensure that the overall type I error rate is still 5%. The field of [sequential analysis](https://en.wikipedia.org/wiki/Sequential_analysis) is concerned with these types of problems, and the solutions can be mathematically complex.
 
