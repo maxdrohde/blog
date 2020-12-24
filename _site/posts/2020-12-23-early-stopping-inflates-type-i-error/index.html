@@ -85,55 +85,49 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Max Rohde: What is a Statistic?</title>
+<title>Max Rohde: Repeated Testing Inflates Type I Error</title>
 
-<meta property="description" itemprop="description" content="An introduction to the definition of &quot;statistic&quot;"/>
+<meta property="description" itemprop="description" content="Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."/>
 
-<link rel="canonical" href="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"/>
+<link rel="canonical" href="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
 <link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon.ico"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-12-08"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-12-08"/>
+<meta property="article:published" itemprop="datePublished" content="2020-12-23"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-12-23"/>
 <meta name="article:author" content="Maximilian Rohde"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Max Rohde: What is a Statistic?"/>
+<meta property="og:title" content="Max Rohde: Repeated Testing Inflates Type I Error"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="An introduction to the definition of &quot;statistic&quot;"/>
-<meta property="og:url" content="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"/>
-<meta property="og:image" content="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png"/>
-<meta property="og:image:width" content="6500"/>
-<meta property="og:image:height" content="4000"/>
+<meta property="og:description" content="Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."/>
+<meta property="og:url" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Max Rohde"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Max Rohde: What is a Statistic?"/>
-<meta property="twitter:description" content="An introduction to the definition of &quot;statistic&quot;"/>
-<meta property="twitter:url" content="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"/>
-<meta property="twitter:image" content="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png"/>
-<meta property="twitter:image:width" content="6500"/>
-<meta property="twitter:image:height" content="4000"/>
+<meta property="twitter:card" content="summary"/>
+<meta property="twitter:title" content="Max Rohde: Repeated Testing Inflates Type I Error"/>
+<meta property="twitter:description" content="Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."/>
+<meta property="twitter:url" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
 <meta property="twitter:site" content="@MaxRohde8"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Max Rohde: What is a Statistic?"/>
-<meta name="citation_fulltext_html_url" content="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"/>
-<meta name="citation_online_date" content="2020/12/08"/>
-<meta name="citation_publication_date" content="2020/12/08"/>
+<meta name="citation_title" content="Max Rohde: Repeated Testing Inflates Type I Error"/>
+<meta name="citation_fulltext_html_url" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
+<meta name="citation_online_date" content="2020/12/23"/>
+<meta name="citation_publication_date" content="2020/12/23"/>
 <meta name="citation_author" content="Maximilian Rohde"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["What is a Statistic?"]},{"type":"character","attributes":{},"value":["An introduction to the definition of \"statistic\""]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":[]}},"value":[]}]}]},{"type":"character","attributes":{},"value":["12-08-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Repeated Testing Inflates Type I Error"]},{"type":"character","attributes":{},"value":["Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com"]}]}]},{"type":"character","attributes":{},"value":["12-23-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["what-is-a-statistic_files/anchor-4.2.2/anchor.min.js","what-is-a-statistic_files/bowser-1.9.3/bowser.min.js","what-is-a-statistic_files/distill-2.2.21/template.v2.js","what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png","what-is-a-statistic_files/header-attrs-2.5.3/header-attrs.js","what-is-a-statistic_files/jquery-1.11.3/jquery.min.js","what-is-a-statistic_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["early-stopping-inflates-type-i-error_files/anchor-4.2.2/anchor.min.js","early-stopping-inflates-type-i-error_files/bowser-1.9.3/bowser.min.js","early-stopping-inflates-type-i-error_files/distill-2.2.21/template.v2.js","early-stopping-inflates-type-i-error_files/header-attrs-2.6/header-attrs.js","early-stopping-inflates-type-i-error_files/jquery-1.11.3/jquery.min.js","early-stopping-inflates-type-i-error_files/webcomponents-2.0.0/webcomponents.js","pval_2000.mp4","pval_anim.mp4"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2080,7 +2074,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 	color: var(--hover-color, white);
 }</style>
 <!--/radix_placeholder_distill-->
-  <script src="../../site_libs/header-attrs-2.5.3/header-attrs.js"></script>
+  <script src="../../site_libs/header-attrs-2.6/header-attrs.js"></script>
   <script src="../../site_libs/jquery-1.11.3/jquery.min.js"></script>
   <script src="../../site_libs/anchor-4.2.2/anchor.min.js"></script>
   <script src="../../site_libs/bowser-1.9.3/bowser.min.js"></script>
@@ -2097,7 +2091,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"What is a Statistic?","description":"An introduction to the definition of \"statistic\"","authors":[{"author":"Maximilian Rohde","authorURL":{},"affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-08T00:00:00.000+00:00","citationText":"Rohde, 2020"}
+{"title":"Repeated Testing Inflates Type I Error","description":"Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.","authors":[{"author":"Maximilian Rohde","authorURL":"https://maximilianrohde.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-12-23T00:00:00.000+00:00","citationText":"Rohde, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2130,148 +2124,60 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>What is a Statistic?</h1>
+<h1>Repeated Testing Inflates Type I Error</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>An introduction to the definition of “statistic”</p></p>
+<p><p>Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.</p></p>
 </div>
 
 <div class="d-byline">
-  Maximilian Rohde true 
+  Maximilian Rohde <a href="https://maximilianrohde.com" class="uri">https://maximilianrohde.com</a> 
   
-<br/>12-08-2020
+<br/>12-23-2020
 </div>
 
 <div class="d-article">
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='http://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
-<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://github.com/wch/extrafont'>extrafont</a></span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<h2 id="introduction">Introduction</h2>
-<p>When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include the mean, median, and the mode as statistics that represent measures of the center of the data.</p>
-<p>Other examples include the maximum observation in the data, the minimum, or the 3rd observation in the data, when the data are arranged from largest to smallest. These are called order statistics.</p>
+<h2 id="whats-the-problem-with-repeated-testing">What’s the problem with repeated testing?</h2>
+<p>Does your astrological sign affect your height? Imagine that 20 scientists want to test this hypothesis. Each scientist, independently of the others, brings in 1000 pairs of twins – one Taurus and one Leo – and measures the difference in their heights. Assume that in reality, the null hypothesis is true: there is no difference in their heights. Of course, there is random variation that will make each twin’s height different, but the null hypothesis is that the mean of this variation is zero.</p>
 <aside>
-For example, the 3rd order statistic is written <span class="math inline">\(X_{(3)}\)</span>, where <span class="math inline">\(X\)</span> is a random vector denoting our sample.
+Especially for height, it’s safe to assume that the variation in heights is normally distributed
 </aside>
-<p>We can even create arbitrary statistics that appear to have little use, such as adding the first and third elements of the data and dividing by 17.</p>
+<p>Each scientists measures their 1,000 pairs of twins, conducts a t-test, and reports whether or not their statistical test has rejected the null hypothesis of no difference. If the null hypothesis is true (which we assume it is in this scenario), and the p-value threshold for significance is set at 0.05 = 1/20, we would expect that on average, 1 out of the 20 scientists would wrongly reject the null hypothesis when it is in fact true. This is the definition of a type I error rate. But what if the scientists took multiple looks at the data?</p>
+<p>It may have began as a way to save money – participants can be expensive! Starting with the 10th pair of twins, each scientist tests their hypothesis with a statistical test after every data point comes in. Measure the 11th pair. Run the test on the 11 data points. Measure the 12th pair. Run the test on the 12 data points. And so on. If any of these tests are significant, can the scientist claim that their result is statistically significant at the 0.05 level? Is the type I error rate of their testing procedure controlled at 0.05?</p>
+<p>The answer is wholeheartedly, no. Repeated testing of the data will greatly inflate the type 1 error rate. Instead of only a 1/20 probability to wrongly reject the null hypothesis when it is true, the actual error rate of this sequential testing procedure will be much higher. In theory, repeated sampling is guaranteed to reach a significant result in sampling continues indefinitely. As stated in Edwards, Lindman, and Savage (1963): “And indeed if an experimenter uses this procedure, then with probability 1 he will eventually reject any sharp null hypothesis, even though it be true.”</p>
 <aside>
-<span class="math display">\[
-\text{Weird Statistic} = \frac{x_1 + x_3}{17}
-\]</span>
+Edwards, W., Lindman, H., &amp; Savage, L. J. (1963). Bayesian statistical inference for psychological research. Psychological review, 70(3), 193.
 </aside>
-<h2 id="simulating-statistics-of-dice-rolls">Simulating statistics of dice rolls</h2>
-<p>As a simple data-generating process, let’s consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers, <span class="math inline">\(x_1, x_2, x_3, x_4, x_5\)</span>, a sample.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='co'># A function to roll `n` dice</span>
-<span class='va'>roll</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>n</span><span class='op'>)</span><span class='op'>{</span>
-  <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>6</span>, size<span class='op'>=</span><span class='va'>n</span>, replace<span class='op'>=</span><span class='cn'>TRUE</span><span class='op'>)</span>
-<span class='op'>}</span>
-
-<span class='co'># Returns the nth order statistic of the sample</span>
-<span class='va'>order_stat</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>x</span>, <span class='va'>n</span><span class='op'>)</span><span class='op'>{</span>
-  <span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-  <span class='kw'><a href='https://rdrr.io/r/base/function.html'>return</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>[</span><span class='va'>n</span><span class='op'>]</span><span class='op'>)</span>
-<span class='op'>}</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='co'># Roll 5 dice 100,000 times</span>
-<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'>map</span><span class='op'>(</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>1e5</span>, <span class='op'>~</span><span class='fu'>roll</span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='co'># Look at first three rolls</span>
-<span class='va'>data</span><span class='op'>[</span><span class='fl'>1</span><span class='op'>:</span><span class='fl'>3</span><span class='op'>]</span>
-</code></pre>
-</div>
-<pre><code>[[1]]
-[1] 2 2 2 3 3
-
-[[2]]
-[1] 2 3 3 6 1
-
-[[3]]
-[1] 6 3 6 6 2</code></pre>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='co'># Generate various statistics for each roll</span>
-<span class='va'>medians</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>data</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>means</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>data</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>minimums</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>data</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>min</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>maximums</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>data</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/Extremes.html'>max</a></span><span class='op'>(</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>second_order_stat</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>data</span>, <span class='op'>~</span><span class='fu'>order_stat</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>.x</span>, n<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span>
-<span class='va'>ranges</span> <span class='op'>&lt;-</span> <span class='va'>maximums</span> <span class='op'>-</span> <span class='va'>minimums</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='va'>medians</span>, <span class='va'>means</span>, <span class='va'>minimums</span>, <span class='va'>maximums</span>, <span class='va'>second_order_stat</span>, <span class='va'>ranges</span><span class='op'>)</span>
-
-<span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'>pivot_longer</span><span class='op'>(</span><span class='va'>df</span>, cols <span class='op'>=</span> <span class='fu'>everything</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-</div>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre><code><span class='va'>df</span><span class='op'>$</span><span class='va'>name</span> <span class='op'>&lt;-</span> <span class='fu'>recode</span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>name</span>,
-  `medians` <span class='op'>=</span> <span class='st'>"Median"</span>,
-  `means` <span class='op'>=</span> <span class='st'>"Mean"</span>,
-  `minimums` <span class='op'>=</span> <span class='st'>"Minimum"</span>,
-  `maximums` <span class='op'>=</span> <span class='st'>"Maximum"</span>,
-  `second_order_stat` <span class='op'>=</span> <span class='st'>"2nd Order Statistic"</span>,
-  `ranges` <span class='op'>=</span> <span class='st'>"Range"</span><span class='op'>)</span>
-
-<span class='va'>df</span><span class='op'>$</span><span class='va'>name</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>name</span><span class='op'>)</span>
-<span class='va'>df</span><span class='op'>$</span><span class='va'>name</span> <span class='op'>&lt;-</span> <span class='fu'>fct_relevel</span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>name</span>,
-                       <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Minimum"</span>,
-                         <span class='st'>"2nd Order Statistic"</span>,
-                         <span class='st'>"Maximum"</span>,
-                         <span class='st'>"Range"</span>,
-                         <span class='st'>"Mean"</span>,
-                         <span class='st'>"Median"</span><span class='op'>)</span><span class='op'>)</span>
-
-<span class='va'>df</span> <span class='op'>%&gt;%</span>
-  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>value</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>geom_bar</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>y <span class='op'>=</span> <span class='va'>..prop..</span><span class='op'>)</span>,
-           width <span class='op'>=</span> <span class='fl'>0.2</span>, fill <span class='op'>=</span> <span class='st'>"gray"</span>, color <span class='op'>=</span> <span class='st'>"black"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>scale_x_continuous</span><span class='op'>(</span>breaks <span class='op'>=</span> <span class='fl'>0</span><span class='op'>:</span><span class='fl'>6</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>facet_wrap</span><span class='op'>(</span><span class='op'>~</span><span class='va'>name</span>, scales <span class='op'>=</span> <span class='st'>"free_x"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Value"</span>,
-       y <span class='op'>=</span> <span class='st'>"Estimated Probability"</span>,
-       title <span class='op'>=</span> <span class='st'>"Distribution of various statistics for 100,000 rolls of 5 dice"</span>,
-       caption <span class='op'>=</span> <span class='st'>"Monte Carlo estimate with 100,000 simulations"</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>ggthemes</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/ggthemes/man/theme_solarized.html'>theme_solarized</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-  <span class='fu'>theme</span><span class='op'>(</span>text <span class='op'>=</span> <span class='fu'>element_text</span><span class='op'>(</span>size <span class='op'>=</span> <span class='fl'>12</span>, family <span class='op'>=</span> <span class='st'>"Source Sans Pro"</span><span class='op'>)</span><span class='op'>)</span>
-</code></pre>
-</div>
-<div class="figure"><span id="fig:unnamed-chunk-6"></span>
-<img src="what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png" alt="Various order statistics for rolls of 5 standard dice. Probabilities were estimated using 100,000 simulations." width="3250" />
-<p class="caption">
-Figure 1: Various order statistics for rolls of 5 standard dice. Probabilities were estimated using 100,000 simulations.
-</p>
-</div>
-</div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="simulation-using-r">Simulation using R</h2>
+<p>Let’s simulate this using R and see for ourselves. To recap, we have 20 independent scientists conducting their own experiment. After every data point comes in, they conduct a statistical testing using the data they have collected so far. As we can see by the wiggling lines, given that the null hypothesis is true, the p-value fluctuate wildly with each test. When a scientist obtains a p-value &lt; 0.05, the line past that observation is colored red so that we can identify when significance has been declared by each scientist.</p>
+<aside>
+The animations were created using the <a href="https://gganimate.com/articles/gganimate.html">gganimate</a> package.
+</aside>
+<video src="pval_anim.mp4" height="500" controls>
+</video>
+<p>On the right panel, the <span style="color:#ed6663">cumulative type I error rate</span> and the <span style="color:#43658b">type I error rate at each observation</span> is shown. We can see that by the time all 1000 data points are recorded, close to half of the scientists have declared significance at some point in the process! This error rate is clearly higher than 1/20 as would be expected without sequential testing. At any given time point however, the type I error rate is preserved: only about 1 scientist will have wrongly declared significance.</p>
+<p>To verify our conclusions, let’s run this simulation for 2,000 scientists instead of 20 and observe the type I error rate.</p>
+<video src="pval_2000.mp4" height="500" controls>
+</video>
+<p>As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> inflates indefinitely, reach almost 50% by 1,000 observations, while the <span style="color:#43658b">type I error rate at any given observation</span> remains controlled at the nominal value of 0.05.</p>
+<h2 id="so-how-can-we-control-type-i-error">So how can we control type I error?</h2>
+<p>How can we fix this problem? One approach is creating rules limiting the number of interim tests that can be conducted. For example, a topic of recent relevance, there was much debate over how many interim looks at the data there should be for the COVID-19 vaccine trials.</p>
+<p>Another approach is applying corrections to the p-value threshold to ensure that the overall type I error rate is still 5%. The field of <a href="https://en.wikipedia.org/wiki/Sequential_analysis">sequential analysis</a> is concerned with these types of problems, and the solutions can be mathematically complex.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <div class="article-footer">
   <p class="social_footer">
     <span class="disqus-comments">
       <i class="fas fa-comments"></i>
       &nbsp;
-      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-12-08-what-is-a-statistic/">Comment on this article</span>
+      <span class="disqus-comment-count" data-disqus-identifier="posts/2020-12-23-early-stopping-inflates-type-i-error/">Comment on this article</span>
     </span>
     <span class="article-sharing">
       Share: &nbsp;
-      <a href="https://twitter.com/share?text=What%20is%20a%20Statistic%3F&amp;url=https%3A%2F%2Fmaximilianrohde.com%2Fposts%2F2020-12-08-what-is-a-statistic%2F">
+      <a href="https://twitter.com/share?text=Repeated%20Testing%20Inflates%20Type%20I%20Error&amp;url=https%3A%2F%2Fmaximilianrohde.com%2Fposts%2F2020-12-23-early-stopping-inflates-type-i-error%2F">
         <i class="fab fa-twitter"></i>
       </a>
-      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fmaximilianrohde.com%2Fposts%2F2020-12-08-what-is-a-statistic%2F&amp;title=What%20is%20a%20Statistic%3F">
+      <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3A%2F%2Fmaximilianrohde.com%2Fposts%2F2020-12-23-early-stopping-inflates-type-i-error%2F&amp;title=Repeated%20Testing%20Inflates%20Type%20I%20Error">
         <i class="fab fa-linkedin"></i>
       </a>
     </span>
@@ -2280,8 +2186,8 @@ Figure 1: Various order statistics for rolls of 5 standard dice. Probabilities w
   <div id="disqus_thread"></div>
   <script>
 var disqus_config = function () {
-  this.page.url = 'https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/';
-  this.page.identifier = 'posts/2020-12-08-what-is-a-statistic/';
+  this.page.url = 'https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/';
+  this.page.identifier = 'posts/2020-12-23-early-stopping-inflates-type-i-error/';
 };
 (function() {
   var d = document, s = d.createElement('script');
@@ -2297,15 +2203,6 @@ var disqus_config = function () {
 <div class="d-appendix">
 </div>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
@@ -2315,12 +2212,12 @@ var disqus_config = function () {
   <p>If you see mistakes or want to suggest changes, please <a href="https://github.com/maxdrohde/blog/issues/new">create an issue</a> on the source repository.</p>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Rohde (2020, Dec. 8). Max Rohde: What is a Statistic?. Retrieved from https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/</pre>
+  <pre class="citation-appendix short">Rohde (2020, Dec. 23). Max Rohde: Repeated Testing Inflates Type I Error. Retrieved from https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{rohde2020what,
+  <pre class="citation-appendix long">@misc{rohde2020repeated,
   author = {Rohde, Maximilian},
-  title = {Max Rohde: What is a Statistic?},
-  url = {https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/},
+  title = {Max Rohde: Repeated Testing Inflates Type I Error},
+  url = {https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/},
   year = {2020}
 }</pre>
 </div>
