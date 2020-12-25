@@ -6,6 +6,7 @@ author:
   - name: Maximilian Rohde
     url: https://maximilianrohde.com
 date: 12-23-2020
+preview: preview.png
 output:
   distill::distill_article:
     self_contained: false
@@ -43,7 +44,7 @@ To verify our conclusions, let's run this simulation for 2,000 scientists instea
 
 <video src="pval_2000.mp4" height=500 controls></video>
 
-As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> inflates indefinitely, reach almost 50% by 1,000 observations, while the <span style="color:#43658b">type I error rate at any given observation</span> remains controlled at the nominal value of 0.05.
+As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> increases the more looks the scientists take at the data, reaching almost 50% by 1,000 observations. Contrast this to <span style="color:#43658b">type I error rate at any given observation</span>, which remains controlled at the nominal value of 0.05.
 
 ## So how can we control type I error?
 How can we fix this problem? One approach is creating rules limiting the number of interim tests that can be conducted. For example, a topic of recent relevance, there was much debate over how many interim looks at the data there should be for the [COVID-19 vaccine trials](https://www.fda.gov/media/137926/download).

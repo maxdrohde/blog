@@ -23,7 +23,9 @@ library(extrafont)
 
 ## Introduction
 
-When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include
+When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics.
+
+Common example include:
 
 - <p> mean and median (measures of center) </p>
 - <p> variance and IQR (measures of spread) </p>
@@ -33,30 +35,52 @@ We can even create arbitrary statistics that appear to have little use, such as 
 
 ## Simulating statistics of dice rolls
 
-As a simple data-generating process, let's consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers, $x_1, x_2, x_3, x_4, x_5$, a sample.
+As a simple data-generating process, let's consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers,
+$$
+(x_1, x_2, x_3, x_4, x_5)
+$$
+a sample. We then will compute statistics from these samples. The main question we seek to answer is: how are the statistics distributed? When I calculate the mean of 5 dice, what will the most likely result be? We can ask this question about any statistic.
+
+We'll write a function to roll `n` dice called `roll()`.
 
 ```{r}
 # A function to roll `n` dice
 roll <- function(n){
   sample(x = 1:6, size=n, replace=TRUE)
 }
+```
 
+Then we'll use `purrr:map()` to generate 100,000 rolls of 5 dice.
+
+```{r, cache=TRUE}
+# Roll 5 dice 100,000 times
+data <- map(1:1e5, ~roll(5))
+```
+
+Here's an example of running the function.
+```{r, cache=TRUE}
+# Look at first three rolls
+data[1:3]
+```
+
+For each of these rolls, we can calculate the value of a statistic.
+
+We'll calculate the following statistics:
+
+- median
+- mean
+- minimum
+- maximum
+- second order statistic $X_{(2)}$
+- range
+
+```{r, cache=TRUE}
 # Returns the nth order statistic of the sample
 order_stat <- function(x, n){
   x <- sort(x)
   return(x[n])
 }
-```
 
-```{r}
-# Roll 5 dice 100,000 times
-data <- map(1:1e5, ~roll(5))
-
-# Look at first three rolls
-data[1:3]
-```
-
-```{r}
 # Generate various statistics for each roll
 medians <- map_dbl(data, ~median(.x))
 means <- map_dbl(data, ~mean(.x))
@@ -66,13 +90,17 @@ second_order_stat <- map_dbl(data, ~order_stat(x=.x, n=2))
 ranges <- maximums - minimums
 ```
 
-```{r}
+```{r, cache=TRUE}
+# Create a data frame from our computed statistics
 df <- tibble(medians, means, minimums, maximums, second_order_stat, ranges)
 
+# Pivot the data into long format for plotting
 df <- pivot_longer(df, cols = everything())
 ```
 
-```{r, dpi=500, fig.cap="Various order statistics for rolls of 5 standard dice. Probabilities were estimated using 100,000 simulations."}
+Now using the data from our simulation, we can plot the sampling distribution of the each of the statistics.
+
+```{r, dpi=500, fig.cap="Distributions of statistics computed from rolls of 5 dice. Probabilities were estimated using 100,000 simulations.", cache=TRUE}
 df$name <- recode(df$name,
   `medians` = "Median",
   `means` = "Mean",
@@ -103,3 +131,9 @@ df %>%
   ggthemes::theme_solarized() +
   theme(text = element_text(size = 12, family = "Source Sans Pro"))
 ```
+
+A few things to note:
+
+- Because of averaging, the mean can take on more possible values than the other statistics. Qe can see it taking on the characteristic bell shape of the normal distribution due to the central limit theorem.
+- The median is always a whole number because we are rolling an odd number of dice.
+- Some of these distributions are tedious to work out analytically, and with more complicated data-generating processes there may be no closed form solutions.

@@ -19,6 +19,7 @@
       <description>Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.</description>
       <guid>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</guid>
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.png" medium="image" type="image/png" width="3876" height="2376"/>
     </item>
     <item>
       <title>What is a Statistic?</title>
@@ -27,7 +28,7 @@
       <description>An introduction to the definition of "statistic"</description>
       <guid>https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic</guid>
       <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png" medium="image" type="image/png" width="6500" height="4000"/>
+      <media:content url="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/what-is-a-statistic_files/figure-html5/unnamed-chunk-7-1.png" medium="image" type="image/png" width="6500" height="4000"/>
     </item>
   </channel>
 </rss>

@@ -102,14 +102,20 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <meta property="og:type" content="article"/>
 <meta property="og:description" content="Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."/>
 <meta property="og:url" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
+<meta property="og:image" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.png"/>
+<meta property="og:image:width" content="3876"/>
+<meta property="og:image:height" content="2376"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Max Rohde"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
-<meta property="twitter:card" content="summary"/>
+<meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Max Rohde: Repeated Testing Inflates Type I Error"/>
 <meta property="twitter:description" content="Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."/>
 <meta property="twitter:url" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"/>
+<meta property="twitter:image" content="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.png"/>
+<meta property="twitter:image:width" content="3876"/>
+<meta property="twitter:image:height" content="2376"/>
 <meta property="twitter:site" content="@MaxRohde8"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
@@ -122,12 +128,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Repeated Testing Inflates Type I Error"]},{"type":"character","attributes":{},"value":["Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com"]}]}]},{"type":"character","attributes":{},"value":["12-23-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","preview","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["Repeated Testing Inflates Type I Error"]},{"type":"character","attributes":{},"value":["Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com"]}]}]},{"type":"character","attributes":{},"value":["12-23-2020"]},{"type":"character","attributes":{},"value":["preview.png"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["early-stopping-inflates-type-i-error_files/anchor-4.2.2/anchor.min.js","early-stopping-inflates-type-i-error_files/bowser-1.9.3/bowser.min.js","early-stopping-inflates-type-i-error_files/distill-2.2.21/template.v2.js","early-stopping-inflates-type-i-error_files/header-attrs-2.6/header-attrs.js","early-stopping-inflates-type-i-error_files/jquery-1.11.3/jquery.min.js","early-stopping-inflates-type-i-error_files/webcomponents-2.0.0/webcomponents.js","pval_2000.mp4","pval_anim.mp4"]}
+  {"type":"character","attributes":{},"value":["early-stopping-inflates-type-i-error_files/anchor-4.2.2/anchor.min.js","early-stopping-inflates-type-i-error_files/bowser-1.9.3/bowser.min.js","early-stopping-inflates-type-i-error_files/distill-2.2.21/template.v2.js","early-stopping-inflates-type-i-error_files/header-attrs-2.6/header-attrs.js","early-stopping-inflates-type-i-error_files/jquery-1.11.3/jquery.min.js","early-stopping-inflates-type-i-error_files/webcomponents-2.0.0/webcomponents.js","preview.png","pval_2000.mp4","pval_anim.mp4"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -1919,6 +1925,7 @@ d-article pre {
 
 d-article ul,
 d-aricle ol {
+	color: #000000;
 	font-size: 0.95rem;
 	font-family: "Noticia Text", serif;
 }
@@ -2166,7 +2173,7 @@ The animations were created using the <a href="https://gganimate.com/articles/gg
 <p>To verify our conclusions, let’s run this simulation for 2,000 scientists instead of 20 and observe the type I error rate.</p>
 <video src="pval_2000.mp4" height="500" controls>
 </video>
-<p>As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> inflates indefinitely, reach almost 50% by 1,000 observations, while the <span style="color:#43658b">type I error rate at any given observation</span> remains controlled at the nominal value of 0.05.</p>
+<p>As seen before, the <span style="color:#ed6663">cumulative type I error rate</span> increases the more looks the scientists take at the data, reaching almost 50% by 1,000 observations. Contrast this to <span style="color:#43658b">type I error rate at any given observation</span>, which remains controlled at the nominal value of 0.05.</p>
 <h2 id="so-how-can-we-control-type-i-error">So how can we control type I error?</h2>
 <p>How can we fix this problem? One approach is creating rules limiting the number of interim tests that can be conducted. For example, a topic of recent relevance, there was much debate over how many interim looks at the data there should be for the <a href="https://www.fda.gov/media/137926/download">COVID-19 vaccine trials</a>.</p>
 <p>Another approach is applying corrections to the p-value threshold to ensure that the overall type I error rate is still 5%. The field of <a href="https://en.wikipedia.org/wiki/Sequential_analysis">sequential analysis</a> is concerned with these types of problems, and the solutions can be mathematically complex.</p>
