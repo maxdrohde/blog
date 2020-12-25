@@ -83,6 +83,12 @@ d-article pre {
 	background-color: #fffcf5;
 }
 
+d-article ul,
+d-aricle ol {
+	font-size: 0.95rem;
+	font-family: "Noticia Text", serif;
+}
+
 d-article h2 {
 	font-size: 20px;
 }

@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["what-is-a-statistic_files/anchor-4.2.2/anchor.min.js","what-is-a-statistic_files/bowser-1.9.3/bowser.min.js","what-is-a-statistic_files/distill-2.2.21/template.v2.js","what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png","what-is-a-statistic_files/header-attrs-2.5.3/header-attrs.js","what-is-a-statistic_files/jquery-1.11.3/jquery.min.js","what-is-a-statistic_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["what-is-a-statistic_files/anchor-4.2.2/anchor.min.js","what-is-a-statistic_files/bowser-1.9.3/bowser.min.js","what-is-a-statistic_files/distill-2.2.21/template.v2.js","what-is-a-statistic_files/figure-html5/unnamed-chunk-6-1.png","what-is-a-statistic_files/figure-html5/unnamed-chunk-7-1.png","what-is-a-statistic_files/header-attrs-2.5.3/header-attrs.js","what-is-a-statistic_files/header-attrs-2.6/header-attrs.js","what-is-a-statistic_files/jquery-1.11.3/jquery.min.js","what-is-a-statistic_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1403,7 +1403,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="what-is-a-statistic_files/header-attrs-2.5.3/header-attrs.js"></script>
+  <script src="what-is-a-statistic_files/header-attrs-2.6/header-attrs.js"></script>
   <script src="what-is-a-statistic_files/jquery-1.11.3/jquery.min.js"></script>
   <script src="what-is-a-statistic_files/anchor-4.2.2/anchor.min.js"></script>
   <script src="what-is-a-statistic_files/bowser-1.9.3/bowser.min.js"></script>
@@ -1451,17 +1451,19 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 </div>
 <h2 id="introduction">Introduction</h2>
-<p>When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include the mean, median, and the mode as statistics that represent measures of the center of the data.</p>
-<p>Other examples include the maximum observation in the data, the minimum, or the 3rd observation in the data, when the data are arranged from largest to smallest. These are called order statistics.</p>
-<aside>
-For example, the 3rd order statistic is written <span class="math inline">\(X_{(3)}\)</span>, where <span class="math inline">\(X\)</span> is a random vector denoting our sample.
-</aside>
-<p>We can even create arbitrary statistics that appear to have little use, such as adding the first and third elements of the data and dividing by 17.</p>
-<aside>
-<span class="math display">\[
-\text{Weird Statistic} = \frac{x_1 + x_3}{17}
-\]</span>
-</aside>
+<p>When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include</p>
+<ul>
+<li><p>
+mean and median (measures of center)
+</p></li>
+<li><p>
+variance and IQR (measures of spread)
+</p></li>
+<li><p>
+order statistics, such as the minimum and the maximum
+</p></li>
+</ul>
+<p>We can even create arbitrary statistics that appear to have little use, such as adding only the first and third elements of the data and dividing by 17, which we would write as <span class="math inline">\(\frac{x_1 + x_3}{17}\)</span>.</p>
 <h2 id="simulating-statistics-of-dice-rolls">Simulating statistics of dice rolls</h2>
 <p>As a simple data-generating process, let’s consider rolling 5 dice. Each time we roll, we obtain 5 numbers, each from 1 to 6. We will call each one of these vectors of 5 numbers, <span class="math inline">\(x_1, x_2, x_3, x_4, x_5\)</span>, a sample.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1489,13 +1491,13 @@ For example, the 3rd order statistic is written <span class="math inline">\(X_{(
 </code></pre>
 </div>
 <pre><code>[[1]]
-[1] 2 2 2 3 3
+[1] 2 4 3 6 3
 
 [[2]]
-[1] 2 3 3 6 1
+[1] 4 2 6 1 5
 
 [[3]]
-[1] 6 3 6 6 2</code></pre>
+[1] 3 5 3 6 5</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

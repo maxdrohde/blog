@@ -23,21 +23,13 @@ library(extrafont)
 
 ## Introduction
 
-When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include the mean, median, and the mode as statistics that represent measures of the center of the data.
+When we collect data from a data-generating process, we can calculate values from that data. These values are called statistics. Common example include
 
-Other examples include the maximum observation in the data, the minimum, or the 3rd observation in the data, when the data are arranged from largest to smallest. These are called order statistics.
+- <p> mean and median (measures of center) </p>
+- <p> variance and IQR (measures of spread) </p>
+- <p> order statistics, such as the minimum and the maximum </p>
 
-<aside>
-For example, the 3rd order statistic is written $X_{(3)}$, where $X$ is a random vector denoting our sample.
-</aside>
-
-We can even create arbitrary statistics that appear to have little use, such as adding the first and third elements of the data and dividing by 17. 
-
-<aside>
-$$
-\text{Weird Statistic} = \frac{x_1 + x_3}{17}
-$$
-</aside>
+We can even create arbitrary statistics that appear to have little use, such as adding only the first and third elements of the data and dividing by 17, which we would write as $\frac{x_1 + x_3}{17}$. 
 
 ## Simulating statistics of dice rolls
 
@@ -111,6 +103,3 @@ df %>%
   ggthemes::theme_solarized() +
   theme(text = element_text(size = 12, family = "Source Sans Pro"))
 ```
-
-
-
