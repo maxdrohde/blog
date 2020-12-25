@@ -58,6 +58,7 @@ data <- map(1:1e5, ~roll(5))
 ```
 
 Here's an example of running the function.
+
 ```{r, cache=TRUE}
 # Look at first three rolls
 data[1:3]
