@@ -32,6 +32,7 @@ My analysis follows that given in Leemis, L. (2020). Mathematical Statistics.
 
 ### Bayesian Inference for Binomial Proportion
 Bayesian inference can be using to quantity our uncertainty about the parameter $p$ from a statistical model where the data is distributed $\text{Bin}(n,p)$. An example is the bias of a coin. In the below example, the true bias is $p = 0.7$. As the data come in, we can update our posterior distribution for $p$.
+
 <video src="anim/binom_bayes.mp4" height=400 controls></video>
 
 ### Bayesian Linear Regression
@@ -47,18 +48,22 @@ The model was fit using [Stan](https://mc-stan.org) to do the MCMC sampling and 
 
 ### Overfitting in Polynomial Regression
 Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.
+
 <video src="anim/overfitting.mp4" height=400 controls></video>
 
 ### Comparing Estimators for Unif(0, θ)
 The maximum likelihood estimator (MLE), while it has many nice statistics properties, isn't always the best estimator. To estimate θ for Unif(0,θ), the MLE is the maximum of the data, which is biased low. It is an underestimate of the true value of θ. To correct the bias, we can multiply the maximum by $\frac{n+1}{n}$ for an estimator that is unbiased, but has slightly higher variance. However, we see that the result is lower mean-squared error (MSE). We also show the method of moments estimator for reference, which is twice the sample mean.
+
 <video src="anim/mle_unif.mp4" height=400 controls></video>
 
 ### Comparing Estimators for Center of Unif(0,1)
 Estimators of central tendency can have very different properties. For Unif(0,1), the mean, median, and midrange (defined by $\frac{\text{max} - \text{min}}{2}$) are consistent estimators of the center, but the median has high variance and the midrange is biased.
+
 <video src="anim/unif_center.mp4" height=400 controls></video>
 
 ### Finding the MLE estimate of the mean for a Normal Distribution
 You can estimate the MLE for the mean of a normal distribution given a dataset by varying the mean until the peak of the log-likelihood is reached. This visually looks like sliding around different candidate distributions until the best match is found. Once the MLE for the mean is found, the variance can be varied in the same fashion (keeping the mean fixed at the MLE) to find the MLE for the variance.
+
 <video src="anim/lik.mp4" height=400 controls></video>
 
 ### Sampling Distribution of the Mean for the Gamma Distribution
@@ -69,5 +74,6 @@ As sample size increases, the sampling distribution of the mean
 - has expected value equal to population mean
 
 For example, mean of N i.i.d samples from Gamma(a,b) is distributed Gamma(Na, Nb).
+
 <video src="anim/gamma.mp4" height=400 controls></video>
 

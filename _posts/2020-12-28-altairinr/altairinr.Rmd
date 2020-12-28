@@ -1,0 +1,66 @@
+---
+title: "Using Altair in R for Data Visualization"
+draft: true
+theme: theme.css
+description: |
+  Altair is a Python pacakge that creates beautiful web-based viaualizations using the Vega-Lite library. I show my workflow for using Altair in R.
+author:
+  - name: Maximilian Rohde
+    url: https://maximilianrohde.com
+date: 12-28-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+This is text
+
+
+```{r, echo=TRUE}
+library(reticulate)
+```
+
+```{python}
+# import libraries
+import altair as alt
+from vega_datasets import data
+```
+
+```{python}
+# Load data
+cars = data.cars()
+
+# Plot data
+alt.Chart(cars).mark_point().encode(
+    x='Horsepower',
+    y='Miles_per_Gallon',
+    color='Origin').properties(width=600,height=400).save("c1.json")
+```
+
+```{r}
+# Display the plot
+#htmltools::includeHTML("c1.html")
+
+vegawidget::vegawidget("c1.json")
+```
+
+Here is some text.
+
+```{python}
+alt.Chart(cars).mark_circle().encode(
+    alt.X(alt.repeat("column"), type='quantitative'),
+    alt.Y(alt.repeat("row"), type='quantitative'),
+    color='Origin:N'
+).properties(
+    width=150,
+    height=150
+).repeat(
+    row=['Horsepower', 'Acceleration', 'Miles_per_Gallon'],
+    column=['Miles_per_Gallon', 'Acceleration', 'Horsepower']
+).interactive().save("c2.json")
+```
+
+```{r}
+# Display the plot
+vegawidget::vegawidget("c2.json")
+```
