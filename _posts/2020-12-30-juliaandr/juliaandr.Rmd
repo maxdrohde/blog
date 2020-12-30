@@ -1,0 +1,46 @@
+---
+title: "Combining Julia and R Code"
+description: |
+  Julia is a powerful new programming langauge. I show how R Markdown and the JuliaCall package make it easy to integrate your Julia and R code.
+draft: true
+author:
+  - name: Maximilian Rohde
+    url: https://maximilianrohde.com
+date: 12-30-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+Julia is a recently created programming language that is designed for scientific computing. 
+
+For many functions in R that are built for speed, the code is written in C, so it runs on a speed comparable to (or faster than) the equivalent Julia code. However, when coding user-defined, the speed of Julia can be a great benefit. 
+
+```{r}
+df <- tibble(x=c(1,2,3),
+             y=c(2,4,7))
+
+generate_random <- function(df) {
+  lm(y~x, data=df)
+}
+
+microbenchmark::microbenchmark(generate_random, unit = "us")
+```
+
+
+```{julia}
+using BenchmarkTools
+using DataFrames, GLM
+
+data = DataFrame(X=[1,2,3], Y=[2,4,7])
+```
+
+```{julia}
+@benchmark ols = lm(@formula(Y ~ X), data)
+```
