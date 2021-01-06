@@ -1,0 +1,25 @@
+---
+title: "Statistical Simulation in the tidyverse"
+draft: true
+description: |
+  How I do statistical simulations using tools from the tidyverse
+author:
+  - name: Maximilian Rohde
+    url: https://maximilianrohde.com
+date: 12-30-2020
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+Sketch out some ideas
+
+- Evaluating the properties of estimators
+- Evaluating confidence intervals
+- Monte Carlo Distributions of estimators
