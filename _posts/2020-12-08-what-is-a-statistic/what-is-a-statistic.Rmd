@@ -1,7 +1,7 @@
 ---
-title: "What is a Statistic?"
+title: What is a statistic?
 description: |
-  An introduction to the definition of "statistic"
+  Exploring the idea of a statistic by simulating dice rolls in R
 author:
   - name: Maximilian Rohde
     url: {}
