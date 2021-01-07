@@ -147,6 +147,7 @@ df$long <- match[,3] %>% as.numeric()
 ```
 
 Let's verify we extracted the coordinates correctly.
+
 ```{r}
 # View first 5 coordinates
 df %>%
