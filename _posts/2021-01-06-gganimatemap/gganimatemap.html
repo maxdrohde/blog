@@ -2579,9 +2579,9 @@ long
 </div>
 <p><img src="gganimatemap_files/figure-html5/unnamed-chunk-18-1.gif" /><!-- --></p>
 </div>
-<p>My preferred way of rendering is to use <code>ffmpeg</code>, instead of the default GIF rendered, because it creates videos rather than GIFs. You will need to <a href="https://ffmpeg.org">install ffpmeg</a> on your computer separately. Using ffmpeg also allows for finer control over the frame rate of the animation and creates smaller files. I’ll show how to use it below.</p>
+<p>My preferred way of rendering is to use <code>ffmpeg</code>, instead of the default GIF renderer, because it creates videos rather than GIFs. You will need to <a href="https://ffmpeg.org">install ffpmeg</a> on your computer separately. Using ffmpeg also allows for finer control over the frame rate of the animation and creates smaller files. I’ll show how to use it below.</p>
 <p>The <code>animate()</code> function has parameters for <code>duration</code> (total duration in seconds), <code>fps</code> (frames per second), and <code>nframes</code> (total number of frames). You can specify any two. For our case, we give the duration and number of frames, and <code>gganimate</code> figures out the proper frame rate to fit the specified number of frames into the specified number of seconds.</p>
-<p>We also set <code>res=300</code> to increase the resolution. This has the side effect of making the font appear large, so we lower the font size in the call the <code>theme_cowplot()</code>.</p>
+<p>We also set <code>res=300</code> to increase the resolution. This has the side effect of making the font appear larger, so we decrease the font size in the call to <code>theme_cowplot()</code>.</p>
 <p>Be warned that this may take a bit of time to animate. Usually, I put my code in a <code>.R</code> file and run it from the terminal, rather than in RStudio, which seems to crash less and render more quickly. Otherwise, when I render the animations in an R Markdown file, I set <code>cache=TRUE</code> in the cell so that I don’t have to render each time I knit the document.</p>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">

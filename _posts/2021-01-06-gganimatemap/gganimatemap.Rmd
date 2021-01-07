@@ -257,11 +257,11 @@ animate(
   )
 ```
 
-My preferred way of rendering is to use `ffmpeg`, instead of the default GIF rendered, because it creates videos rather than GIFs. You will need to [install ffpmeg](https://ffmpeg.org) on your computer separately. Using ffmpeg also allows for finer control over the frame rate of the animation and creates smaller files. I'll show how to use it below.
+My preferred way of rendering is to use `ffmpeg`, instead of the default GIF renderer, because it creates videos rather than GIFs. You will need to [install ffpmeg](https://ffmpeg.org) on your computer separately. Using ffmpeg also allows for finer control over the frame rate of the animation and creates smaller files. I'll show how to use it below.
 
 The `animate()` function has parameters for `duration` (total duration in seconds), `fps` (frames per second), and `nframes` (total number of frames). You can specify any two. For our case, we give the duration and number of frames, and `gganimate` figures out the proper frame rate to fit the specified number of frames into the specified number of seconds.
 
-We also set `res=300` to increase the resolution. This has the side effect of making the font appear large, so we lower the font size in the call the `theme_cowplot()`.
+We also set `res=300` to increase the resolution. This has the side effect of making the font appear larger, so we decrease the font size in the call to `theme_cowplot()`.
 
 Be warned that this may take a bit of time to animate. Usually, I put my code in a `.R` file and run it from the terminal, rather than in RStudio, which seems to crash less and render more quickly. Otherwise, when I render the animations in an R Markdown file, I set `cache=TRUE` in the cell so that I don't have to render each time I knit the document.
 
