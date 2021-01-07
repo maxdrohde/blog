@@ -1,5 +1,5 @@
 ---
-title: "Repeated Testing Inflates Type I Error"
+title: "Repeated testing inflates type I error"
 description: |
   Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.
 author:

@@ -11,9 +11,18 @@
       <link>https://maximilianrohde.com</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Repeated Testing Inflates Type I Error</title>
+      <title>Using gganimate with ggmap</title>
+      <dc:creator>Maximilian Rohde</dc:creator>
+      <link>https://maximilianrohde.com/posts/2021-01-06-gganimatemap</link>
+      <description>Combining gganimate with ggmap can be used to create animations of geographic data. I give a few examples using data from Nashville Open Data.</description>
+      <guid>https://maximilianrohde.com/posts/2021-01-06-gganimatemap</guid>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://maximilianrohde.com/posts/2021-01-06-gganimatemap/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>Repeated testing inflates type I error</title>
       <dc:creator>Maximilian Rohde</dc:creator>
       <link>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</link>
       <description>Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.</description>
