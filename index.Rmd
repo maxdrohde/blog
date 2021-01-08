@@ -9,9 +9,4 @@ knitr::opts_chunk$set(
   echo = FALSE,
   dev.args = list(bg = 'transparent')
 )
-library(tidyverse)
 ```
-
-<video autoplay loop muted playsinline height="300">
-  <source src="images/lik.mp4" type="video/mp4">
-</video>
