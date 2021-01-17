@@ -1,0 +1,17 @@
+```{=html}
+
+<style>
+    .grid-container {
+        display: flex;
+        width = 100%
+    }
+</style>
+
+<div class="l-page">
+  <div class="grid-container">
+      <video src="quadratic_GD4_1.mp4" height=400 autoplay="true" controls></video>
+      <video src="quadratic_GD4_2.mp4" height=400 autoplay="true" controls></video>
+      <video src="quadratic_GD4_3.mp4" height=400 autoplay="true" controls></video>
+  </div>
+</div>
+```
