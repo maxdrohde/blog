@@ -17,13 +17,15 @@ library(glue)
 library(gganimate)
 ```
 
-Gradient descent is an optimization algorithm that finds the minimum of a function. The most common use is when the function to be minimized is a loss function: a function that quantifies the "loss" associated the given inputs. For example, a common loss function is the mean-squared error. ADD EXAMPLE.
+## Introduction
 
-Let's start with a very simple example, where we already know the answer. The function we want to minimize is the quadratic function
+Gradient descent is an optimization algorithm that finds the minimum of a function. The most common use is when the function to be minimized is a loss function: a function that quantifies the "loss" associated the given inputs. A common loss function is the mean-squared error, where the loss incurred by an inaccurate prediction is the squared distance from the prediction to the true value. Neural networks used for deep learning, for example, are commonly optimized using some form of gradient descent.
+
+Let's start with a simple example, where we already know the answer. We wish to minimize the quadratic function given by
 $$
 f(x) = (x + 2)^2 + 3
 $$
-The parabola we are trying to minimize looks like this:
+The shape of the function, a parabola, is shown in the plot below. Most applications of gradient descent occur in dimensions much higher than 2D, where can cannot so easily visualize the function we are trying to minimize.
 
 ```{r, code_folding=TRUE}
 x <- seq(-10,5,length.out=1e4)
@@ -43,11 +45,15 @@ plot_data %>%
 ```
 
 
-Using calculus, we can take the first-derivative, set it equal to zero, and solve, to obtain a minimum of $y=3$, which occurs at $x=-2$.
+Finding the minimum is a solved problem using calculus. We can take the first-derivative, set it equal to zero, and solve, to obtain a minimum of $y=3$, which occurs at $x=-2$. Our goal is to reproduce this result using gradient descent.
 
-Our goal is to reproduce this result using gradient descent. Gradient descent works by starting at a location in the space, and then each iteration of the algorithm it moves downhill with respect to the function -- opposite the gradient -- until it reaches a minimum where the gradient is zero. Apart from the tuning parameters of the algorithm, which we will discuss later, the only information gradient descent needs to work is the function to be minimized and its first derivative.
+## An analogy for gradient descent
+
+Gradient descent works by starting at a location in the space, and then each iteration of the algorithm it moves downhill with respect to the function -- opposite the gradient -- until it reaches a minimum where the gradient is zero. Apart from the tuning parameters of the algorithm, which we will discuss later, the only information gradient descent needs to work is the function to be minimized and its first derivative.
 
 A good analogy is to think of a ball moving under the influence of gravity in a landscape of hills and valleys. If you let the ball move freely, it will roll to a point of minimum height in the landscape. Does the ball know the whole landscape and decide to move to the minimum point? No, all the information that the ball needs to find the minimum is the slope at the point it is currently at. The local information is enough. Gravity is constantly moving the ball downhill, based on the slope of the landscape where the ball currently is. 
+
+## The gradient descent algorithm
 
 The general algorithm for gradient descent is as follows:
 
@@ -60,12 +66,14 @@ The general algorithm for gradient descent is as follows:
 Now, let's go through this step-by-step for our quadratic function example.
 
 1. Pick an arbitrarily chosen starting point of $x=5$. Thus $f(x) = (5 + 2)^2 + 3 = 52$. We also pick a commonly used learning rate of 0.1.
-2. The derivative of $f(x)$ is $\frac{df}{dx} =  2x+4$. So the gradient is $2(5) + 4 = 14$
-3. Set the step size: $\text{delta} = - \text{gradient} * \text{learning_rate} = - 14* 0.01 = -0.14$
-4. Set the current value of $x$ to $x + delta = 5 - 0.14 = 4.86$
-5. Assume we set step size (delta) threshold is 0.001 and the maximum number of iteration is 5000. Since neither of these criteria are currently met, we go back to step 2. now with $x=4.86$, and repeat until we meet one of the exit conditions.
+2. The derivative of $f(x)$ is $\frac{df}{dx} =  2x+4$. So the gradient is $2(5) + 4 = \boxed{14}$
+3. Set the step size: $\text{delta} = - \text{gradient} * \text{learning_rate} = - 14* 0.01 = \boxed{-0.14}$
+4. Set the current value of $x$ to $x + delta = 5 - 0.14 = \boxed{4.86}$
+5. Assume we set step size (delta) threshold is 0.001 and the maximum number of iteration is 5000. Since neither of these criteria are currently met, we go back to step 2, but now with $x=4.86$, and repeat until we meet one of the exit conditions.
 
-Now that we understand the concept, let's translate this into R code.
+## Implementation in R
+
+Now that we understand the gradient descent algorithm in theory, let's translate this into R code.
 
 ```{r, results='hide'}
 
@@ -143,6 +151,8 @@ delta: -0.000887355420159741
 ```
 We see that the algorithm converged to the minimum at $(3,-2)$.
 
+## Animations
+
 Animations are a good way to get intuition on how optimization algorithms like gradient descent work. The animation below shows our gradient descent algorithm using three different learning rates. The code to create the animations can be found [here](https://gist.github.com/maxdrohde/f807b2fbeb7b66532ec8a5e7f3c6e2bf).
 
 ```{=html}
@@ -154,6 +164,12 @@ Animations are a good way to get intuition on how optimization algorithms like g
 ```
 
 
-Using a learning rate of 0.01 takes much longer to converge, but with more complicated functions it is less likely to overshoot and miss the minimum. Using a learning rate of 0.95, the algorithm constantly overshoots the minimum and oscillates on either side of it until it finally settles down. A learning rate of 0.1 seems like the best compromise between accuracy and speed, since we know the true minimum. However, in more complicated applications where the true minimum is unknown, trial and error is necessary to find a good learning rate, and there are more complex algorithms that build on gradient descent to automatically tune the learning rate as the algorithm progresses.
+Using a learning rate of 0.01 takes much longer to converge, but with more complicated functions it is less likely to overshoot and miss the minimum. Using a learning rate of 0.95, the algorithm constantly overshoots the minimum and oscillates on either side of it until it finally settles down. A learning rate of 0.1 seems like the best compromise between accuracy and speed, since we know the true minimum.
+
+However, in more complicated applications where the true minimum is unknown, trial and error is necessary to find a good learning rate, and there are more complex algorithms that build on gradient descent to automatically tune the learning rate as the algorithm progresses.
+
+## Next steps
+
+In the next post in this series, we will extend our gradient descent algorithm to optimize over more complex functions: fitting a least-squares regression line, and a logistic regression curve.
 
 
