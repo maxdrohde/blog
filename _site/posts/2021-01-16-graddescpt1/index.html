@@ -133,7 +133,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["gd_anim.mp4","graddescpt1_files/anchor-4.2.2/anchor.min.js","graddescpt1_files/bowser-1.9.3/bowser.min.js","graddescpt1_files/distill-2.2.21/template.v2.js","graddescpt1_files/figure-html5/unnamed-chunk-2-1.png","graddescpt1_files/figure-html5/unnamed-chunk-3-1.png","graddescpt1_files/figure-html5/unnamed-chunk-4-1.png","graddescpt1_files/header-attrs-2.6.4/header-attrs.js","graddescpt1_files/jquery-1.11.3/jquery.min.js","graddescpt1_files/popper-2.6.0/popper.min.js","graddescpt1_files/tippy-6.2.7/tippy-bundle.umd.min.js","graddescpt1_files/tippy-6.2.7/tippy-light-border.css","graddescpt1_files/tippy-6.2.7/tippy.css","graddescpt1_files/tippy-6.2.7/tippy.umd.min.js","graddescpt1_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["gd_anim.mp4","graddescpt1_files/anchor-4.2.2/anchor.min.js","graddescpt1_files/bowser-1.9.3/bowser.min.js","graddescpt1_files/distill-2.2.21/template.v2.js","graddescpt1_files/figure-html5/unnamed-chunk-2-1.png","graddescpt1_files/figure-html5/unnamed-chunk-3-1.png","graddescpt1_files/figure-html5/unnamed-chunk-4-1.png","graddescpt1_files/header-attrs-2.6.4/header-attrs.js","graddescpt1_files/jquery-1.11.3/jquery.min.js","graddescpt1_files/popper-2.6.0/popper.min.js","graddescpt1_files/tippy-6.2.7/tippy-bundle.umd.min.js","graddescpt1_files/tippy-6.2.7/tippy-light-border.css","graddescpt1_files/tippy-6.2.7/tippy.css","graddescpt1_files/tippy-6.2.7/tippy.umd.min.js","graddescpt1_files/webcomponents-2.0.0/webcomponents.js","lr1.mp4"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2204,10 +2204,11 @@ d-appendix d-footnote-list a.footnote-backlink {
 </div>
 </div>
 <h2 id="introduction">Introduction</h2>
-<p>Gradient descent is an optimization algorithm that finds the minimum of a function. The most common use is when the function to be minimized is a loss function: a function that quantifies the “loss” associated the given inputs. A common loss function is the mean-squared error, where the loss incurred by an inaccurate prediction is the squared distance from the prediction to the true value. Neural networks used for deep learning, for example, are commonly optimized using some form of gradient descent.</p>
-<p>Let’s start with a simple example, where we already know the answer. We wish to minimize the quadratic function given by <span class="math display">\[
+<p>Gradient descent is an optimization algorithm that finds the minimum of a function. Commonly, the function to be minimized is a loss function: a function that quantifies the “badness” associated with the given inputs, which you would naturally want to minimize. A common loss function is the mean-squared error. For example, using mean-squared error, the loss incurred by an inaccurate prediction is the squared distance from the prediction to the true value. Neural networks are commonly optimized using some form of gradient descent.</p>
+<p>Let’s start with a simple example, where we already know the answer. We wish to minimize the quadratic function given by</p>
+<p><span class="math display">\[
 f(x) = (x + 2)^2 + 3
-\]</span> The shape of the function, a parabola, is shown in the plot below. Most applications of gradient descent occur in dimensions much higher than 2D, where can cannot so easily visualize the function we are trying to minimize.</p>
+\]</span> The shape of the function, a parabola, is shown in the plot below. Most applications of gradient descent occur in dimensions much higher than 2D, where we cannot so easily visualize the function we are trying to minimize.</p>
 <div class="layout-chunk" data-layout="l-body">
 <details>
 <summary>
@@ -2233,10 +2234,10 @@ Show code
 </details>
 <p><img src="graddescpt1_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<p>Finding the minimum is a solved problem using calculus. We can take the first-derivative, set it equal to zero, and solve, to obtain a minimum of <span class="math inline">\(y=3\)</span>, which occurs at <span class="math inline">\(x=-2\)</span>. Our goal is to reproduce this result using gradient descent.</p>
+<p>Finding the minimum is a solved problem using calculus. We can take the first-derivative, set it equal to zero, and solve, to obtain a minimum of <span class="math inline">\(y=3\)</span>, which occurs at <span class="math inline">\(x=-2\)</span>. Then an application of the second-derivative test confirms that it is minimum, rather than a maximum. Our goal is to reproduce this result using gradient descent.</p>
 <h2 id="an-analogy-for-gradient-descent">An analogy for gradient descent</h2>
-<p>Gradient descent works by starting at a location in the space, and then each iteration of the algorithm it moves downhill with respect to the function – opposite the gradient – until it reaches a minimum where the gradient is zero. Apart from the tuning parameters of the algorithm, which we will discuss later, the only information gradient descent needs to work is the function to be minimized and its first derivative.</p>
-<p>A good analogy is to think of a ball moving under the influence of gravity in a landscape of hills and valleys. If you let the ball move freely, it will roll to a point of minimum height in the landscape. Does the ball know the whole landscape and decide to move to the minimum point? No, all the information that the ball needs to find the minimum is the slope at the point it is currently at. The local information is enough. Gravity is constantly moving the ball downhill, based on the slope of the landscape where the ball currently is.</p>
+<p>Gradient descent works by starting at a location in the space. Then, each iteration of the algorithm it moves downhill with respect to the function, which is by definition opposite the gradient. The algorithm proceeds downhill until it reaches a minimum where the gradient is zero within some tolerance (success) or the maximum number of iterations is reached (failure). Apart from the tuning parameters of the algorithm, which we will discuss later, the only information gradient descent needs to work is the function to be minimized and its first derivative.</p>
+<p>Here’s an analogy. Think of a ball moving under the influence of gravity in a landscape of hills and valleys. If you let the ball move freely, it will roll to a point of minimum height in the landscape. Does the ball know the whole landscape and decide to move to the minimum point? No. The only information it uses to find the minimum is the slope at the point it is currently at. The local information is enough. Gravity is constantly moving the ball downhill, based on the slope of the landscape at the current location.</p>
 <h2 id="the-gradient-descent-algorithm">The gradient descent algorithm</h2>
 <p>The general algorithm for gradient descent is as follows:</p>
 <ol type="1">
@@ -2244,7 +2245,7 @@ Show code
 <li>Using the derivative of the function, compute the gradient (i.e., slope) at the current point.</li>
 <li>Compute the step size: <span class="math inline">\(\text{delta} = - \text{gradient} * \text{learning_rate}\)</span></li>
 <li>Set <span class="math inline">\(x \rightarrow x + \text{delta}\)</span></li>
-<li>Repeat from step until either delta is below a certain threshold or a maximum number of iterations is reached</li>
+<li>Repeat from step 2 until either delta is below a certain threshold or a maximum number of iterations is reached</li>
 </ol>
 <p>Now, let’s go through this step-by-step for our quadratic function example.</p>
 <ol type="1">
@@ -2252,7 +2253,7 @@ Show code
 <li>The derivative of <span class="math inline">\(f(x)\)</span> is <span class="math inline">\(\frac{df}{dx} = 2x+4\)</span>. So the gradient is <span class="math inline">\(2(5) + 4 = \boxed{14}\)</span></li>
 <li>Set the step size: <span class="math inline">\(\text{delta} = - \text{gradient} * \text{learning_rate} = - 14* 0.01 = \boxed{-0.14}\)</span></li>
 <li>Set the current value of <span class="math inline">\(x\)</span> to <span class="math inline">\(x + delta = 5 - 0.14 = \boxed{4.86}\)</span></li>
-<li>Assume we set step size (delta) threshold is 0.001 and the maximum number of iteration is 5000. Since neither of these criteria are currently met, we go back to step 2, but now with <span class="math inline">\(x=4.86\)</span>, and repeat until we meet one of the exit conditions.</li>
+<li>Assume we set the step size (delta) threshold to 0.001 and the maximum number of iteration to 5000. Since neither of these criteria are currently met, we go back to step 2, but now with <span class="math inline">\(x=4.86\)</span>, and repeat until we meet one of the exit conditions.</li>
 </ol>
 <h2 id="implementation-in-r">Implementation in R</h2>
 <p>Now that we understand the gradient descent algorithm in theory, let’s translate this into R code.</p>
@@ -2300,7 +2301,7 @@ Show code
 </code></pre>
 </div>
 </div>
-<p>Here’s the output from the first and last few of the iterations.</p>
+<p>Here’s the output from the beginning and end of the algorithm.</p>
 <pre><code>Iteration: 1
 x: 3.6
 y: 34.36
@@ -2329,16 +2330,20 @@ x: -1.99645057831936
 y: 3.00001259839427
 delta: -0.000887355420159741
 </code></pre>
-<p>We see that the algorithm converged to the minimum at <span class="math inline">\((3,-2)\)</span>.</p>
+<p>We see that our gradient descent algorithm converged to the minimum at <span class="math inline">\((3,-2)\)</span>, with some error that could be reduced if we lowered the step size threshold.</p>
 <h2 id="animations">Animations</h2>
-<p>Animations are a good way to get intuition on how optimization algorithms like gradient descent work. The animation below shows our gradient descent algorithm using three different learning rates. The code to create the animations can be found <a href="https://gist.github.com/maxdrohde/f807b2fbeb7b66532ec8a5e7f3c6e2bf">here</a>.</p>
+<p>Animations are a good way to get intuition on how optimization algorithms like gradient descent work. The animation below shows our algorithm using three different learning rates. The code to create the animations can be found <a href="https://gist.github.com/maxdrohde/f807b2fbeb7b66532ec8a5e7f3c6e2bf">here</a>. Note: The animations may not display well on some mobile devices.</p>
 
 <div class="l-page">
   <video src="gd_anim.mp4" height=400 controls></video>
 </div>
 
 <p>Using a learning rate of 0.01 takes much longer to converge, but with more complicated functions it is less likely to overshoot and miss the minimum. Using a learning rate of 0.95, the algorithm constantly overshoots the minimum and oscillates on either side of it until it finally settles down. A learning rate of 0.1 seems like the best compromise between accuracy and speed, since we know the true minimum.</p>
-<p>However, in more complicated applications where the true minimum is unknown, trial and error is necessary to find a good learning rate, and there are more complex algorithms that build on gradient descent to automatically tune the learning rate as the algorithm progresses.</p>
+<p>In this specific example, a learning rate higher than 1 will constantly overshoot the minimum and will never converge. A special case is when the learning rate is exactly 1: the algorithm will move between two points on opposite sides on the parabola and remain stuck there. See the animation below.</p>
+
+  <video src="lr1.mp4" height=400 controls></video>
+
+<p>In real applications, where the true minimum is unknown, trial and error is necessary to find a good learning rate. There are more <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Extensions_and_variants">complex algorithms</a> that build on gradient descent to automatically tune the learning rate as the algorithm progresses.</p>
 <h2 id="next-steps">Next steps</h2>
 <p>In the next post in this series, we will extend our gradient descent algorithm to optimize over more complex functions: fitting a least-squares regression line, and a logistic regression curve.</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
