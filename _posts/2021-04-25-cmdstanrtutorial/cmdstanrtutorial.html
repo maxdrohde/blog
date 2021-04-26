@@ -85,381 +85,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-  <title>Max Rohde: ⠀</title>
+  <title>Introduction to Bayesian Inference (with examples in R and Stan)</title>
 
-  <meta property="description" itemprop="description" content=""/>
+  <meta property="description" itemprop="description" content="An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R."/>
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
 
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2021-04-25"/>
+  <meta property="article:created" itemprop="dateCreated" content="2021-04-25"/>
+  <meta name="article:author" content="Maximilian Rohde"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Max Rohde: ⠀"/>
+  <meta property="og:title" content="Introduction to Bayesian Inference (with examples in R and Stan)"/>
   <meta property="og:type" content="article"/>
-  <meta property="og:description" content=""/>
+  <meta property="og:description" content="An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Max Rohde"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Max Rohde: ⠀"/>
-  <meta property="twitter:description" content=""/>
-  <meta property="twitter:site" content="@MaxRohde8"/>
+  <meta property="twitter:title" content="Introduction to Bayesian Inference (with examples in R and Stan)"/>
+  <meta property="twitter:description" content="An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description"]}},"value":[{"type":"character","attributes":{},"value":["⠀"]},{"type":"character","attributes":{},"value":[""]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["draft","title","description","author","date","output"]}},"value":[{"type":"logical","attributes":{},"value":[true]},{"type":"character","attributes":{},"value":["Introduction to Bayesian Inference (with examples in R and Stan)"]},{"type":"character","attributes":{},"value":["An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com"]}]}]},{"type":"character","attributes":{},"value":["04-25-2021"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["cmdstanrtutorial_files/anchor-4.2.2/anchor.min.js","cmdstanrtutorial_files/bowser-1.9.3/bowser.min.js","cmdstanrtutorial_files/distill-2.2.21/template.v2.js","cmdstanrtutorial_files/figure-html5/unnamed-chunk-2-1.png","cmdstanrtutorial_files/figure-html5/unnamed-chunk-3-1.png","cmdstanrtutorial_files/figure-html5/unnamed-chunk-4-1.png","cmdstanrtutorial_files/figure-html5/unnamed-chunk-6-1.png","cmdstanrtutorial_files/figure-html5/unnamed-chunk-8-1.png","cmdstanrtutorial_files/header-attrs-2.7.10/header-attrs.js","cmdstanrtutorial_files/jquery-1.11.3/jquery.min.js","cmdstanrtutorial_files/popper-2.6.0/popper.min.js","cmdstanrtutorial_files/tippy-6.2.7/tippy-bundle.umd.min.js","cmdstanrtutorial_files/tippy-6.2.7/tippy-light-border.css","cmdstanrtutorial_files/tippy-6.2.7/tippy.css","cmdstanrtutorial_files/tippy-6.2.7/tippy.umd.min.js","cmdstanrtutorial_files/webcomponents-2.0.0/webcomponents.js"]}
   </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1774,344 +1432,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">/* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
-  @import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
-  /* This must remain at the top of this file.                 */
-
-  html {
-  	/*-- Main font sizes --*/
-  	--title-size: 30px;
-  	--body-size: 0.97rem;
-  	--code-size: 0.90rem;
-  	--aside-size: 0.80rem;
-  	--fig-cap-size: 0.80rem;
-  	/*-- Main font colors --*/
-  	--title-color: #000000;
-  	--header-color: #000000;
-  	--body-color: #000000;
-  	--aside-color: #000000;
-  	--fig-cap-color: #000000;
-  	/*-- Specify custom fonts ~~~ must be imported above   --*/
-  	--heading-font: "Lato", sans-serif;
-  	--mono-font: "Source Code Pro", monospace;
-  	--body-font: "Lato", sans-serif;
-  	--navbar-font: "Lato", sans-serif; /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-  	--heading-size: 0.6rem;
-  	--heading-color: rgba(0, 0, 0, 0.5);
-  	--body-size: 0.8rem;
-  	--body-color: rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-  	--heading-size: 18px;
-  	--contents-size: 13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-  	--heading-size: 15px;
-  	--heading-color: rgba(0, 0, 0, 0.65);
-  	--text-size: 0.8em;
-  	--text-color: rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-  	--title-size: 18px;
-  	--text-color: rgba(255, 255, 255, 0.856);
-  	--text-size: 18px;
-  	--hover-color: white;
-  	--bkgd-color: #43658b;
-  }
-
-  .distill-site-footer {
-  	--text-color: rgba(255, 255, 255, 0.8);
-  	--text-size: 15px;
-  	--hover-color: white;
-  	--bkgd-color: #43658b;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  .distill-site-nav {
-  	font-weight: 700;
-  }
-
-  d-article pre {
-  	background-color: #f6f6f6;
-  }
-
-  d-article h2 {
-  	font-size: 20px;
-  }
-
-  d-article h3 {
-  	font-size: 18px;
-  }
-
-  video {
-  	padding-top: 10px;
-  }</style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.7.10/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="cmdstanrtutorial_files/header-attrs-2.7.10/header-attrs.js"></script>
+  <script src="cmdstanrtutorial_files/jquery-1.11.3/jquery.min.js"></script>
+  <script src="cmdstanrtutorial_files/popper-2.6.0/popper.min.js"></script>
+  <link href="cmdstanrtutorial_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="cmdstanrtutorial_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="cmdstanrtutorial_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="cmdstanrtutorial_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="cmdstanrtutorial_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="cmdstanrtutorial_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="cmdstanrtutorial_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
@@ -2123,65 +1454,256 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"⠀","description":"","authors":[]}
+{"title":"Introduction to Bayesian Inference (with examples in R and Stan)","description":"An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R.","authors":[{"author":"Maximilian Rohde","authorURL":"https://maximilianrohde.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2021-04-25T00:00:00.000+00:00","citationText":"Rohde, 2021"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Max Rohde</a>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="anim.html">Animations</a>
-<a href="resume.pdf">Resume</a>
-<a href="https://github.com/maxdrohde">
-<i class="fab fa-github fa-1x" aria-hidden="true"></i>
-</a>
-<a href="https://scholar.google.com/citations?user=nAFvhkEAAAAJ&amp;hl=en">
-<i class="fa ai ai-google-scholar-square ai-1x" aria-hidden="true"></i>
-</a>
-<a href="https://twitter.com/MaxRohde8">
-<i class="fab fa-twitter fa-1x" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>⠀</h1>
+<h1>Introduction to Bayesian Inference (with examples in R and Stan)</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R.</p></p>
 </div>
 
+<div class="d-byline">
+  Maximilian Rohde <a href="https://maximilianrohde.com" class="uri">https://maximilianrohde.com</a> 
+  
+<br/>04-25-2021
+</div>
 
 <div class="d-article">
-<div>
-<p><img src="images/me.png" alt="Max Rohde" width=25% style="float: left; margin-right: 30px; margin-bottom: 20px;"></p>
-<div>
-<p style="font-family: Lato; font-size:20px;">
-Hello, I’m Max. I have a BA in Physics and Geology from <a href="https://www.carleton.edu">Carleton College</a> and I’m currently a graduate student at Vanderbilt University in the <a href="https://www.vumc.org/biostatistics/chair">Department of Biostatistics</a>.
-</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://wilkelab.org/cowplot/'>cowplot</a></span><span class='op'>)</span>
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://mc-stan.org/cmdstanr'>cmdstanr</a></span><span class='op'>)</span>
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://mc-stan.org/posterior/'>posterior</a></span><span class='op'>)</span>
+
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://gganimate.com'>gganimate</a></span><span class='op'>)</span>
+</code></pre>
 </div>
 </div>
-<h2 id="about-me">About me</h2>
-<p>I worked as an ORISE Fellow from 2018-2020 in the <a href="https://www.fda.gov/about-fda/center-drug-evaluation-and-research-cder/office-infectious-diseases-oid">FDA Division of Antivirals</a> (Office of New Drugs), where I built natural-language processing tools for product label data, and conducted meta-analyses of clinical trials for <a href="https://doi.org/10.1016/j.cgh.2020.08.042">hepatitis C</a> and <a href="https://www.croiconference.org/abstract/investigation-of-a-potential-composite-endpoint-for-immunologic-nonresponder-trials/">HIV</a> treatments. My interests are in adaptive clinical trial design, reproducible research, and statistics education.</p>
-<p>In addition to my work at the FDA, I have conducted research with the LIGO collaboration on the effects of <a href="https://doi.org/10.1088/1361-6382/aa60eb">magnetic transients on gravitational wave detection</a>, studied the effects of <a href="https://doi.org/10.1785/0220160193">atmospheric noise on seismometers</a> at the Albuquerque Seismological Laboratory, and worked in science policy at the <a href="https://dc.mit.edu">MIT Washington Office</a> in Washington, DC.</p>
-<p>Communicating science is as important as research to me. The past few years I have been working as a <a href="https://prep1on1.com/our-team/">tutor</a>, where I love teaching high-school and undergraduate students physics, chemistry, and mathematics.</p>
-<p>In my free time I enjoy cooking (and collecting cookbooks), playing funk guitar, and swimming.</p>
-<h2 id="contact">Contact</h2>
-<p>You can contact me at <a href="mailto:maxdrohde@gmail.com">maxdrohde@gmail.com</a>. I also post on <a href="https://twitter.com/MaxRohde8">Twitter</a>.</p>
-<p>My GitHub can here found <a href="https://github.com/maxdrohde">here</a>. I mainly code in R and Python.</p>
-<p>You can find my publications at my Google Scholar page <a href="https://scholar.google.com/citations?user=nAFvhkEAAAAJ&hl=en">here</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>To best understand this post, you should have a basic familiarity with probability and programming in R.</p>
+<h2 id="what-is-bayesian-inference">What is Bayesian Inference?</h2>
+<p>Bayesian inference can be thought of as the inverse of probability theory. How so? In probability theory, we have a model with certain parameters. From this model, we can generate data. The parameters of the model determine the characteristics of the data (e.g., the spread of the data, most common values, etc… ). With Bayesian inference, we instead start with the data, and try to infer the parameters of the model.</p>
+<p>Let’s start with perspective of probability theory and see what we can do. Then we will move on to Bayesian inference.</p>
+<h2 id="probability-theory">Probability Theory</h2>
+<p>An basic example of a probability model is drawing samples from a normal distribution. The normal distribution has two parameters, the mean and the variance. The mean determines where the distribution is centered, and the variance determines how far the spread of the distribution is around the center. Let’s look at a normal distribution with a mean of 5 and a variance of 2.</p>
+<p>We can express this more succinctly as</p>
+<p><span class="math display">\[
+X_1, X_2 \ldots X_n \stackrel{iid}{\sim} N(5,\sqrt{2})
+\]</span></p>
+<p>The notation i.i.d. means “independently and identically distributed”. This means that each sample we take is from the <span class="math inline">\(N(5,\sqrt{2})\)</span> distribution and that the samples are not related in any way (apart from being drawn from the same distribution).</p>
+<p>From the probability model, we can answer a variety of questions exactly.</p>
+<h3 id="question-1">Question 1</h3>
+<pre><code>Question: What do 20 samples generated from the distribution look like?
+
+Answer: See below.</code></pre>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>generated_data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span><span class='op'>(</span>n <span class='op'>=</span> <span class='fl'>20</span>,
+                        mean<span class='op'>=</span><span class='fl'>5</span>,
+                        sd<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span><span class='op'>(</span><span class='va'>generated_data</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code> [1]  4.77430023 10.01411373  0.04724072  6.80436741  3.27995081
+ [6]  4.94217911  3.19387475  6.79443415  3.86401443  5.32447659
+[11]  5.84663622  1.93802232  4.74298913  3.74415286  1.91593546
+[16]  6.04563827  5.64777651  1.99473453  5.65281159  3.82577620</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'>tibble</span><span class='op'>(</span><span class='va'>generated_data</span><span class='op'>)</span>
+
+<span class='va'>df</span> <span class='op'>%&gt;%</span>
+<span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>generated_data</span>, y<span class='op'>=</span><span class='fl'>0</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_x_continuous</span><span class='op'>(</span>breaks<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>5</span>, <span class='fl'>0</span>, <span class='fl'>5</span>, <span class='fl'>10</span><span class='op'>)</span>, limits <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>6</span>, <span class='fl'>15</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>
+    title<span class='op'>=</span><span class='st'>"What do 20 samples generated from the distribution look like?"</span>,
+    x<span class='op'>=</span><span class='st'>"x"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://wilkelab.org/cowplot/reference/theme_cowplot.html'>theme_cowplot</a></span><span class='op'>(</span>font_family <span class='op'>=</span> <span class='st'>"Lato"</span>, font_size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>theme</span><span class='op'>(</span>axis.title.y<span class='op'>=</span><span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+        axis.text.y<span class='op'>=</span><span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>, 
+        axis.ticks.y<span class='op'>=</span><span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span>,
+        axis.line.y <span class='op'>=</span> <span class='fu'>element_blank</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="cmdstanrtutorial_files/figure-html5/unnamed-chunk-3-1.png" width="624" /></p>
+</div>
+<h3 id="question-2">Question 2</h3>
+<pre><code>Question: What is the outcome with the highest probability of occurring?
+
+Answer: 5</code></pre>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span>,<span class='fl'>12</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_area</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"function"</span>, fun <span class='op'>=</span> <span class='va'>dnorm</span>, fill <span class='op'>=</span> <span class='st'>"grey80"</span>, xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span>, <span class='fl'>12</span><span class='op'>)</span>,
+            args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fl'>5</span>, sd <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_vline</span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fl'>5</span>, linetype<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"What is the outcome with the highest probability of occurring?"</span>,
+       x <span class='op'>=</span> <span class='st'>"x"</span>,
+       y <span class='op'>=</span> <span class='st'>"Probability Density"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_x_continuous</span><span class='op'>(</span>breaks<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://wilkelab.org/cowplot/reference/theme_cowplot.html'>theme_cowplot</a></span><span class='op'>(</span>font_family <span class='op'>=</span> <span class='st'>"Lato"</span>, font_size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="cmdstanrtutorial_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
+</div>
+<h3 id="question-3">Question 3</h3>
+<pre><code>Question: What is the probability that a given observation is greater than 7?
+
+Answer: about 7.86% (see below code)</code></pre>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Calculate the probability that X_i &gt; 7</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>pnorm</a></span><span class='op'>(</span><span class='fl'>7</span>, mean<span class='op'>=</span><span class='fl'>5</span>, sd<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span>, lower.tail <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>*</span> <span class='fl'>100</span>
+</code></pre>
+</div>
+<pre><code>[1] 7.86496</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>ggplot</span><span class='op'>(</span><span class='cn'>NULL</span>, <span class='fu'>aes</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span>,<span class='fl'>12</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_area</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"function"</span>, fun <span class='op'>=</span> <span class='va'>dnorm</span>, fill <span class='op'>=</span> <span class='st'>"grey80"</span>, xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='op'>-</span><span class='fl'>2</span>, <span class='fl'>12</span><span class='op'>)</span>,
+            args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fl'>5</span>, sd <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_area</span><span class='op'>(</span>stat <span class='op'>=</span> <span class='st'>"function"</span>, fun <span class='op'>=</span> <span class='va'>dnorm</span>, fill <span class='op'>=</span> <span class='st'>"#8f2727"</span>, xlim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>7</span>, <span class='fl'>12</span><span class='op'>)</span>,
+            args <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span><span class='op'>(</span>mean <span class='op'>=</span> <span class='fl'>5</span>, sd <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>sqrt</a></span><span class='op'>(</span><span class='fl'>2</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_vline</span><span class='op'>(</span>xintercept <span class='op'>=</span> <span class='fl'>7</span>, linetype<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>annotate</span><span class='op'>(</span><span class='st'>"text"</span>, x<span class='op'>=</span><span class='fl'>7.6</span>, y<span class='op'>=</span><span class='fl'>0.02</span>, label<span class='op'>=</span><span class='st'>"7.86%"</span>, color<span class='op'>=</span><span class='st'>"white"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>
+    title<span class='op'>=</span><span class='st'>"What is the probability that a given observation is greater than 7?"</span>,
+    x <span class='op'>=</span> <span class='st'>"x"</span>,
+    y <span class='op'>=</span> <span class='st'>"Probability Density"</span>
+    <span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_x_continuous</span><span class='op'>(</span>breaks<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>5</span>, <span class='fl'>7</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://wilkelab.org/cowplot/reference/theme_cowplot.html'>theme_cowplot</a></span><span class='op'>(</span>font_family <span class='op'>=</span> <span class='st'>"Lato"</span>, font_size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="cmdstanrtutorial_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<h2 id="bayesian-inference-the-big-idea">Bayesian Inference: The Big Idea</h2>
+<p>Now that we’ve seen the types of questions that can be answered in the framework of probability theory, what types of questions can be answered with Bayesian inference?</p>
+<div class="highlight">
+<p><strong>The Big Idea</strong></p>
+<p>Instead of asking questions about the <em>data given the model</em>, we instead ask questions about the <em>model given the data</em>.</p>
+</div>
+<p>For example:</p>
+<p>Given these data, and assuming the data are drawn from a normal distribution with unknown values for the parameters (mean and variance)…</p>
+<ul>
+<li>what are likely values for the mean and variance?</li>
+<li>if I draw another sample from the same distribution, what values can I expect?</li>
+<li>what is the probability that the mean is greater than 7?</li>
+<li>what is the probability that the mean is between 3 and 6?</li>
+</ul>
+<p>We will learn to answer these questions in the next section.</p>
+<h2 id="bayesian-inference-motivation">Bayesian Inference: Motivation</h2>
+<p>To illustrate the main ideas of Bayesian inference, let’s switch from our normal distribution to an even simpler example.</p>
+<div class="highlight">
+<p><strong>Scenario</strong></p>
+<p>You are trying to settle an argument with a friend. You believe that the percentage of left-handed people is 30%, while your friends believes it is 10%. The two of you decided to settle this argument by collecting some data.</p>
+<p>You go to the mall and take a random sample of 15 people. For each person you ask if they are right-handed or left-handed, and record the data as right-handed=0 and left-handed=1.</p>
+<p>You collect the following data: <span class="math display">\[00100 \quad 01000 \quad 00101\]</span> In other words, 4/15 people were left-handed. How can we use this data to settle the argument?</p>
+</div>
+<p>To start with, we need a probability model for this scenario. Assume that the true proportion of people in the world who are left-handed is <span class="math inline">\(p\)</span>. Then each person we poll have a probability <span class="math inline">\(p\)</span> of being left-handed, and a <span class="math inline">\(1-p\)</span> probability of being right-handed. We call a random variable distribued this way a Bernoulli random variable. We can thus write our probability model as</p>
+<p><span class="math display">\[
+X_1, X_2, \ldots X_{15} \stackrel{iid}{\sim} \text{Bern}(p)
+\]</span> where, as stated above, the Bernoulli distribution is defined as</p>
+<p><span class="math display">\[\begin{align*}
+P(X_i = 1) &amp;= p \\
+P(X_i = 0) &amp;= 1-p \\
+\end{align*}\]</span></p>
+<p>We can write our probability model in a more compact way. Note that the order in which we observe the data doesn’t matter, since we assumed they are independently sampled. Because of this, we can reduce the data to only two numbers: the number of left-handed people (<span class="math inline">\(Y\)</span>) and the total number of people (<span class="math inline">\(N\)</span>). Then the number of right-handed people is given by <span class="math inline">\(N - Y\)</span>.</p>
+<p>The random variable <span class="math inline">\(Y\)</span> is then described by the binomial distribution. We can then write our probability model as</p>
+<p><span class="math display">\[
+\text{Number of LH observed}  \sim \text{Binomial}(\text{Total observed}, \text{True LH proportion}) \\
+\]</span> or in more conventional notation…</p>
+<p><span class="math display">\[
+Y \sim \text{Binomial}(N, p)
+\]</span></p>
+<p>Based on the data, what is our best guess for <span class="math inline">\(p\)</span>. A reasonable answer is to estimate the population proportion using the sample proportion <span class="math inline">\(\hat{p} = 4/15 \approx 0.266\)</span>. We see that the sample proportion suggests that <span class="math inline">\(p=0.3\)</span> is a better guess for true population than <span class="math inline">\(p=0.1\)</span>, but it’s unclear how much better. You friend might respond that it is still possible that <span class="math inline">\(p=0.1\)</span>, but by chance the data sampled happened to favor <span class="math inline">\(p=0.3\)</span>. To convince our friend, we need some way to quantify how the evidence should influence our belief about the true value of <span class="math inline">\(p\)</span>.</p>
+<p>This is where Bayesian inference comes in…</p>
+<h2 id="bayesian-inference-an-analytical-solution">Bayesian Inference: An Analytical Solution</h2>
+<p>In this section, we will resolve our argument (mostly) about the true proportion of left-handed people. We will solve the problem using the mathematics of Bayesian inference to arrive at a closed-form solution.</p>
+<p>Bayesian inference has three components:</p>
+<ul>
+<li>Likelihood</li>
+<li>Prior</li>
+<li>Posterior</li>
+</ul>
+<p>Let’s go through each of these in detail.</p>
+<h3 id="likelihood">Likelihood</h3>
+<p>Likelihood is the probability of the observed data given a value for the parameters of the probability distribution. The likelihood contains all of the evidence that the data tell us about the parameter <span class="math inline">\(p\)</span>. This is known as the <em>Likelihood Principle</em>.</p>
+<p>Let’s illustrate with some examples from our probability model given by</p>
+<p><span class="math display">\[
+Y \sim \text{Binomial}(N, p)
+\]</span></p>
+<p>The probability mass function of <span class="math inline">\(Y\)</span> is given by</p>
+<p><span class="math display">\[
+\text{Likelihood} =  P\left(Y=k \right) = \binom{N}{k} p^{k} (1-p)^{N-k}
+\]</span></p>
+<p>In our data, we observed that <span class="math inline">\(Y=4\)</span>, so we fix the value of <span class="math inline">\(k\)</span> in the above equation. We vary the value of <span class="math inline">\(p\)</span> and compute the likelihood for each value of <span class="math inline">\(p\)</span>.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Define the values of p we will calculate the likelihood for</span>
+<span class='va'>p_grid</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>1</span>, by<span class='op'>=</span><span class='fl'>0.001</span><span class='op'>)</span>
+
+<span class='co'># Calculate the likelihood at each value of p</span>
+<span class='va'>likelihood</span> <span class='op'>&lt;-</span> <span class='fu'>map_dbl</span><span class='op'>(</span><span class='va'>p_grid</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/stats/Binomial.html'>dbinom</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='fl'>4</span>, size<span class='op'>=</span><span class='fl'>15</span>, prob<span class='op'>=</span><span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<p>Below is a plot of the likelihood.</p>
+<div class="layout-chunk" data-layout="l-body">
+<details>
+<summary>
+Show code
+</summary>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'>tibble</span><span class='op'>(</span>p <span class='op'>=</span> <span class='va'>p_grid</span>, <span class='va'>likelihood</span><span class='op'>)</span> <span class='op'>%&gt;%</span>
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>aes</span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>p</span>, y<span class='op'>=</span><span class='va'>likelihood</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_line</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>title<span class='op'>=</span><span class='st'>"Likelihood given Y=4"</span>,
+       x<span class='op'>=</span><span class='st'>"p"</span>,
+       y<span class='op'>=</span><span class='st'>"Likelihood"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://wilkelab.org/cowplot/reference/theme_minimal_grid.html'>theme_minimal_grid</a></span><span class='op'>(</span>font_family <span class='op'>=</span> <span class='st'>"Lato"</span>, font_size <span class='op'>=</span> <span class='fl'>11</span><span class='op'>)</span>
+</code></pre>
+</div>
+</details>
+<p><img src="cmdstanrtutorial_files/figure-html5/unnamed-chunk-8-1.png" width="624" /></p>
+</div>
+<h3 id="prior">Prior</h3>
+<h3 id="posterior">Posterior</h3>
+<h3 id="limitations-of-the-analytical-approach">Limitations of the analytical approach</h3>
+<h2 id="bayesian-inference-using-mcmc">Bayesian Inference: Using MCMC</h2>
+<h2 id="further-reading">Further Reading</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2189,14 +1711,20 @@ Hello, I’m Max. I have a BA in Physics and Geology from <a href="https://www.c
 <div class="d-appendix">
 </div>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom">
-<h3 id="updates-and-corrections">Corrections</h3>
-<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/maxdrohde/blog/issues/new">create an issue</a> on the source repository.</p>
-</div>
+<div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

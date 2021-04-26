@@ -1,0 +1,257 @@
+---
+draft: true
+title: "Introduction to Bayesian Inference (with examples in R and Stan)"
+description: |
+  An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R.
+author:
+  - name: Maximilian Rohde
+    url: https://maximilianrohde.com
+date: 04-25-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r, message=FALSE}
+library(tidyverse)
+library(cowplot)
+
+library(cmdstanr)
+library(posterior)
+
+library(gganimate)
+```
+
+## Prerequisites
+To best understand this post, you should have a basic familiarity with probability and programming in R.
+
+## What is Bayesian Inference?
+Bayesian inference can be thought of as the inverse of probability theory. How so? In probability theory, we have a model with certain parameters. From this model, we can generate data. The parameters of the model determine the characteristics of the data (e.g., the spread of the data, most common values, etc... ). With Bayesian inference, we instead start with the data, and try to infer the parameters of the model. 
+
+Let's start with perspective of probability theory and see what we can do. Then we will move on to Bayesian inference.
+
+## Probability Theory
+An basic example of a probability model is drawing samples from a normal distribution. The normal distribution has two parameters, the mean and the variance. The mean determines where the distribution is centered, and the variance determines how far the spread of the distribution is around the center. Let's look at a normal distribution with a mean of 5 and a variance of 2.
+
+We can express this more succinctly as
+
+$$
+X_1, X_2 \ldots X_n \stackrel{iid}{\sim} N(5,\sqrt{2})
+$$
+
+The notation i.i.d. means "independently and identically distributed". This means that each sample we take is from the $N(5,\sqrt{2})$ distribution and that the samples are not related in any way (apart from being drawn from the same distribution).
+
+From the probability model, we can answer a variety of questions exactly.
+
+### Question 1
+
+```
+Question: What do 20 samples generated from the distribution look like?
+
+Answer: See below.
+```
+
+```{r}
+generated_data <- rnorm(n = 20,
+                        mean=5,
+                        sd=sqrt(5))
+
+print(generated_data)
+```
+
+```{r, code_folding=TRUE}
+df <- tibble(generated_data)
+
+df %>%
+ggplot() +
+  aes(x=generated_data, y=0) +
+  geom_point() +
+  scale_x_continuous(breaks=c(-5, 0, 5, 10), limits = c(-6, 15)) +
+  labs(
+    title="What do 20 samples generated from the distribution look like?",
+    x="x") +
+  theme_cowplot(font_family = "Lato", font_size = 11) +
+  theme(axis.title.y=element_blank(),
+        axis.text.y=element_blank(), 
+        axis.ticks.y=element_blank(),
+        axis.line.y = element_blank())
+```
+
+### Question 2
+
+```
+Question: What is the outcome with the highest probability of occurring?
+
+Answer: 5
+```
+
+```{r, code_folding=TRUE}
+ggplot(NULL, aes(c(-2,12))) +
+  geom_area(stat = "function", fun = dnorm, fill = "grey80", xlim = c(-2, 12),
+            args = list(mean = 5, sd = sqrt(2))) +
+  geom_vline(xintercept = 5, linetype=2) +
+  labs(title="What is the outcome with the highest probability of occurring?",
+       x = "x",
+       y = "Probability Density") +
+  scale_x_continuous(breaks=c(5)) +
+  theme_cowplot(font_family = "Lato", font_size = 11)
+```
+
+### Question 3
+
+```
+Question: What is the probability that a given observation is greater than 7?
+
+Answer: about 7.86% (see below code)
+```
+
+```{r}
+# Calculate the probability that X_i > 7
+pnorm(7, mean=5, sd=sqrt(2), lower.tail = FALSE) * 100
+```
+
+```{r, code_folding=TRUE}
+ggplot(NULL, aes(c(-2,12))) +
+  geom_area(stat = "function", fun = dnorm, fill = "grey80", xlim = c(-2, 12),
+            args = list(mean = 5, sd = sqrt(2))) +
+  geom_area(stat = "function", fun = dnorm, fill = "#8f2727", xlim = c(7, 12),
+            args = list(mean = 5, sd = sqrt(2))) +
+  geom_vline(xintercept = 7, linetype=2) +
+  annotate("text", x=7.6, y=0.02, label="7.86%", color="white") +
+  labs(
+    title="What is the probability that a given observation is greater than 7?",
+    x = "x",
+    y = "Probability Density"
+    ) +
+  scale_x_continuous(breaks=c(5, 7)) +
+  theme_cowplot(font_family = "Lato", font_size = 11)
+```
+
+## Bayesian Inference: The Big Idea
+Now that we've seen the types of questions that can be answered in the framework of probability theory, what types of questions can be answered with Bayesian inference?
+
+<div class="highlight">
+**The Big Idea**
+
+Instead of asking questions about the *data given the model*, we instead ask questions about the *model given the data*.
+</div>
+
+For example:
+
+Given these data, and assuming the data are drawn from a normal distribution with unknown values for the parameters (mean and variance)...
+
+- what are likely values for the mean and variance?
+- if I draw another sample from the same distribution, what values can I expect?
+- what is the probability that the mean is greater than 7?
+- what is the probability that the mean is between 3 and 6?
+
+We will learn to answer these questions in the next section.
+
+## Bayesian Inference: Motivation
+
+To illustrate the main ideas of Bayesian inference, let's switch from our normal distribution to an even simpler example.
+
+<div class="highlight">
+**Scenario**
+
+You are trying to settle an argument with a friend. You believe that the percentage of left-handed people is 30%, while your friends believes it is 10%. The two of you decided to settle this argument by collecting some data. 
+
+You go to the mall and take a random sample of 15 people. For each person you ask if they are right-handed or left-handed, and record the data as right-handed=0 and left-handed=1.
+
+You collect the following data:
+$$00100 \quad 01000 \quad 00101$$
+In other words, 4/15 people were left-handed. How can we use this data to settle the argument?
+</div>
+
+To start with, we need a probability model for this scenario. Assume that the true proportion of people in the world who are left-handed is $p$. Then each person we poll have a probability $p$ of being left-handed, and a $1-p$ probability of being right-handed. We call a random variable distribued this way a Bernoulli random variable. We can thus write our probability model as
+
+$$
+X_1, X_2, \ldots X_{15} \stackrel{iid}{\sim} \text{Bern}(p)
+$$
+where, as stated above, the Bernoulli distribution is defined as
+
+\begin{align*}
+P(X_i = 1) &= p \\
+P(X_i = 0) &= 1-p \\
+\end{align*}
+
+We can write our probability model in a more compact way. Note that the order in which we observe the data doesn't matter, since we assumed they are independently sampled. Because of this, we can reduce the data to only two numbers: the number of left-handed people ($Y$) and the total number of people ($N$). Then the number of right-handed people is given by $N - Y$.
+
+The random variable $Y$ is then described by the binomial distribution. We can then write our probability model as
+
+$$
+\text{Number of LH observed}  \sim \text{Binomial}(\text{Total observed}, \text{True LH proportion}) \\
+$$
+or in more conventional notation...
+
+$$
+Y \sim \text{Binomial}(N, p)
+$$
+
+Based on the data, what is our best guess for $p$. A reasonable answer is to estimate the population proportion using the sample proportion $\hat{p} = 4/15 \approx 0.266$. We see that the sample proportion suggests that $p=0.3$ is a better guess for true population than $p=0.1$, but it's unclear how much better. You friend might respond that it is still possible that $p=0.1$, but by chance the data sampled happened to favor $p=0.3$. To convince our friend, we need some way to quantify how the evidence should influence our belief about the true value of $p$.
+
+This is where Bayesian inference comes in...
+
+## Bayesian Inference: An Analytical Solution
+In this section, we will resolve our argument (mostly) about the true proportion of left-handed people. We will solve the problem using the mathematics of Bayesian inference to arrive at a closed-form solution. 
+
+Bayesian inference has three components:
+
+- Likelihood
+- Prior
+- Posterior
+
+Let's go through each of these in detail.
+
+### Likelihood
+Likelihood is the probability of the observed data given a value for the parameters of the probability distribution. The likelihood contains all of the evidence that the data tell us about the parameter $p$. This is known as the *Likelihood Principle*.
+
+Let's illustrate with some examples from our probability model given by
+
+$$
+Y \sim \text{Binomial}(N, p)
+$$
+
+The probability mass function of $Y$ is given by
+
+$$
+\text{Likelihood} =  P\left(Y=k \right) = \binom{N}{k} p^{k} (1-p)^{N-k}
+$$
+
+In our data, we observed that $Y=4$, so we fix the value of $k$ in the above equation. We vary the value of $p$ and compute the likelihood for each value of $p$.
+
+```{r}
+# Define the values of p we will calculate the likelihood for
+p_grid <- seq(0, 1, by=0.001)
+
+# Calculate the likelihood at each value of p
+likelihood <- map_dbl(p_grid, ~dbinom(x=4, size=15, prob=.x))
+```
+
+Below is a plot of the likelihood.
+
+```{r, code_folding=TRUE}
+tibble(p = p_grid, likelihood) %>%
+  ggplot() +
+  aes(x=p, y=likelihood) +
+  geom_line() +
+  labs(title="Likelihood given Y=4",
+       x="p",
+       y="Likelihood") +
+  theme_minimal_grid(font_family = "Lato", font_size = 11)
+```
+
+### Prior
+
+### Posterior
+
+### Limitations of the analytical approach
+
+## Bayesian Inference: Using MCMC
+
+
+
+## Further Reading
+
+
+
