@@ -11,16 +11,7 @@
       <link>https://maximilianrohde.com</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 25 Apr 2021 00:00:00 +0000</lastBuildDate>
-    <item>
-      <title>Introduction to Bayesian Inference using Stan with R (cmdstanr)</title>
-      <dc:creator>Maximilian Rohde</dc:creator>
-      <link>https://maximilianrohde.com/posts/2021-04-25-cmdstanrtutorial</link>
-      <description>An introduction to Bayesian inference starting from the fundamentals. Examples are illustrated in R using the Stan language for Bayesian inference. The cmdstandr package is used to call Stan from R.</description>
-      <guid>https://maximilianrohde.com/posts/2021-04-25-cmdstanrtutorial</guid>
-      <pubDate>Sun, 25 Apr 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://maximilianrohde.com/posts/2021-04-25-cmdstanrtutorial/cmdstanrtutorial_files/figure-html5/unnamed-chunk-3-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
+    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>What is Gradient Descent? (Part I)</title>
       <dc:creator>Maximilian Rohde</dc:creator>
@@ -56,6 +47,15 @@
       <guid>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</guid>
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
+    <item>
+      <title>What is a statistic?</title>
+      <dc:creator>Maximilian Rohde</dc:creator>
+      <link>https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic</link>
+      <description>Exploring the idea of a statistic by simulating dice rolls in R</description>
+      <guid>https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic</guid>
+      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
+      <media:content url="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/preview.png" medium="image" type="image/png" width="640" height="391"/>
     </item>
   </channel>
 </rss>
