@@ -51,6 +51,12 @@ Overfitting is a major problem when fitting complex models to few data points. A
 
 <video src="anim/overfitting.mp4" height=400 controls></video>
 
+### Using Quantile-Quantile Plots to Detect Depatures from Normality
+
+Quantile-quantile plots are a useful tool for assessing the fit of data to a given distribution. This animation shows Q-Q plots for t-distributed data with various degrees of freedom. We see that the Q-Q plot shows more clearly the departure from normality compared to the histogram.
+
+<video src="anim/qq_tdist.mp4" height=400 controls></video>
+
 ### Comparing Estimators for Unif(0, θ)
 The maximum likelihood estimator (MLE), while it has many nice statistics properties, isn't always the best estimator. To estimate θ for Unif(0,θ), the MLE is the maximum of the data, which is biased low. It is an underestimate of the true value of θ. To correct the bias, we can multiply the maximum by $\frac{n+1}{n}$ for an estimator that is unbiased, but has slightly higher variance. However, we see that the result is lower mean-squared error (MSE). We also show the method of moments estimator for reference, which is twice the sample mean.
 

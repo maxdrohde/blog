@@ -2203,6 +2203,10 @@ My analysis follows that given in Leemis, L. (2020). Mathematical Statistics.
 <p>Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.</p>
 <video src="anim/overfitting.mp4" height="400" controls>
 </video>
+<h3 id="using-quantile-quantile-plots-to-detect-depatures-from-normality">Using Quantile-Quantile Plots to Detect Depatures from Normality</h3>
+<p>Quantile-quantile plots are a useful tool for assessing the fit of data to a given distribution. This animation shows Q-Q plots for t-distributed data with various degrees of freedom. We see that the Q-Q plot shows more clearly the departure from normality compared to the histogram.</p>
+<video src="anim/qq_tdist.mp4" height="400" controls>
+</video>
 <h3 id="comparing-estimators-for-unif0-θ">Comparing Estimators for Unif(0, θ)</h3>
 <p>The maximum likelihood estimator (MLE), while it has many nice statistics properties, isn’t always the best estimator. To estimate θ for Unif(0,θ), the MLE is the maximum of the data, which is biased low. It is an underestimate of the true value of θ. To correct the bias, we can multiply the maximum by <span class="math inline">\(\frac{n+1}{n}\)</span> for an estimator that is unbiased, but has slightly higher variance. However, we see that the result is lower mean-squared error (MSE). We also show the method of moments estimator for reference, which is twice the sample mean.</p>
 <video src="anim/mle_unif.mp4" height="400" controls>
