@@ -9,6 +9,13 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Below are some animations I created using [gganimate](https://gganimate.com/index.html) to help me understand concepts in statistics. The work of [3Blue1Brown](https://www.3blue1brown.com) and [Seeing Theory](https://seeing-theory.brown.edu) have been an inspiration for me.
 
+### Overfitting with Splines
+Regression splines are an effective tools for fitting curves to non-linear data. However, the flexibility of splines is both a blessing and a curse. If the degrees of freedom are set too high, splines can quickly overfit a dataset -- resulting in good performance on the training data but poor performance on the testing data.
+
+The below animation shows training data (top left) and test data (top right), with the true data generating function as a dashed line. Overlaying splines over both the training and test data, we see that the best performance on the test set is obtained at about 5 degrees of freedom. 
+
+<video src="anim/spline_overfitting.mp4" height=500 controls></video>
+
 ### The German Tank Problem
 The [German Tank problem](https://en.wikipedia.org/wiki/German_tank_problem) is a famous problem in statistics. During World War 2, the Allied forces used the serial numbers on German tanks to estimate the number of tanks produced. The results of this statistical analysis estimated a production of 246 tanks per month, while intelligence from spies estimated a much higher rate of around 1.400 tanks per month. After the war, German records showed that the true rate was 245 per month! The statistical evidence that the numbers of tanks was lower than expected gave the Allies motivation to attack the Western Front, leading to the fall of Berlin and the end of the war in Europe.
 
