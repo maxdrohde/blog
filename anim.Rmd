@@ -3,41 +3,16 @@ title: "Animations"
 description: ""
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
-
 Below are some animations I created using [gganimate](https://gganimate.com/index.html) to help me understand concepts in statistics. The work of [3Blue1Brown](https://www.3blue1brown.com) and [Seeing Theory](https://seeing-theory.brown.edu) have been an inspiration for me.
 
-### Overfitting with Splines
+### Overfitting with Regression Splines
 Regression splines are an effective tool for fitting curves to non-linear data. However, the flexibility of splines is both a blessing and a curse. If the degrees of freedom are set too high, splines can quickly overfit a dataset -- resulting in good performance on the training data but poor performance on the testing data.
 
-The below animation shows training data (top left) and test data (top right), with the true data generating function as a dashed line. Overlaying splines over both the training and test data, we see that the best performance on the test set is obtained at about 5 degrees of freedom. 
+The below animation shows training data (top left) and test data (top right), with the true data generating function as the gray dashed line. We see that the best performance on the test set is obtained at about 5 degrees of freedom, while the training error goes to zero, a clear sign of overfitting.
 
 <video src="anim/spline_overfitting.mp4" height=500 controls></video>
 
-### The German Tank Problem
-The [German Tank problem](https://en.wikipedia.org/wiki/German_tank_problem) is a famous problem in statistics. During World War 2, the Allied forces used the serial numbers on German tanks to estimate the number of tanks produced. The results of this statistical analysis estimated a production of 246 tanks per month, while intelligence from spies estimated a much higher rate of around 1.400 tanks per month. After the war, German records showed that the true rate was 245 per month! The statistical evidence that the numbers of tanks was lower than expected gave the Allies motivation to attack the Western Front, leading to the fall of Berlin and the end of the war in Europe.
-
-We can formulate this problem assuming the serial numbers start at 1 and are randomly sampled from the population of tanks. Let $X_1, X_2, \ldots X_n$ be a sample of $n$ serial numbers. The maximum likelihood estimate for the total number of serial numbers is $X_{(n)}$, the maximum of the observed serial numbers. However, this is a biased estimator -- it underestimates the true number of tanks.
-
-We can improve this estimator by adding a factor to our maximum likelihood estimator to make it unbiased -- the number of known missing tank serial numbers divided by the sample size, which can be thought of as the average gap between the recorded serial numbers. Thus the new estimator is
-$$
-\hat{\theta}=x_{(n)}+\frac{x_{(n)}-n}{n} = \left(1+\frac{1}{n}\right) x_{(n)}-1
-$$
-which has the desired property of being unbiased. Simulating the performance of our estimators with a known population size of 2,000 tanks, we see that bias-corrected MLE has higher variance than the MLE but it achieves a lower mean squared error across the tested sample sizes due to being unbiased.
-
-<aside>
-There are $X_{(n)} - n$ known missing tank serial numbers.
-</aside>
-
-<aside>
-My analysis follows that given in Leemis, L. (2020). Mathematical Statistics.
-</aside>
-
-<video src="anim/german_tank_anim.mp4" height=400 controls></video>
-
-### Bayesian Inference for Binomial Proportion
+### Bayesian Inference for a Binomial Proportion
 Bayesian inference can be using to quantity our uncertainty about the parameter $p$ from a statistical model where the data is distributed $\text{Bin}(n,p)$. An example is the bias of a coin. In the below example, the true bias is $p = 0.7$. As the data come in, we can update our posterior distribution for $p$.
 
 <video src="anim/binom_bayes.mp4" height=400 controls></video>
@@ -63,6 +38,27 @@ Overfitting is a major problem when fitting complex models to few data points. A
 Quantile-quantile plots are a useful tool for assessing the fit of data to a given distribution. This animation shows Q-Q plots for t-distributed data with various degrees of freedom. We see that the Q-Q plot shows more clearly the departure from normality compared to the histogram.
 
 <video src="anim/qq_tdist.mp4" height=400 controls></video>
+
+### The German Tank Problem
+The [German Tank problem](https://en.wikipedia.org/wiki/German_tank_problem) is a famous problem in statistics. During World War 2, the Allied forces used the serial numbers on German tanks to estimate the number of tanks produced. The results of this statistical analysis estimated a production of 246 tanks per month, while intelligence from spies estimated a much higher rate of around 1.400 tanks per month. After the war, German records showed that the true rate was 245 per month! The statistical evidence that the numbers of tanks was lower than expected gave the Allies motivation to attack the Western Front, leading to the fall of Berlin and the end of the war in Europe.
+
+We can formulate this problem assuming the serial numbers start at 1 and are randomly sampled from the population of tanks. Let $X_1, X_2, \ldots X_n$ be a sample of $n$ serial numbers. The maximum likelihood estimate for the total number of serial numbers is $X_{(n)}$, the maximum of the observed serial numbers. However, this is a biased estimator -- it underestimates the true number of tanks.
+
+We can improve this estimator by adding a factor to our maximum likelihood estimator to make it unbiased -- the number of known missing tank serial numbers divided by the sample size, which can be thought of as the average gap between the recorded serial numbers. Thus the new estimator is
+$$
+\hat{\theta}=x_{(n)}+\frac{x_{(n)}-n}{n} = \left(1+\frac{1}{n}\right) x_{(n)}-1
+$$
+which has the desired property of being unbiased. Simulating the performance of our estimators with a known population size of 2,000 tanks, we see that bias-corrected MLE has higher variance than the MLE but it achieves a lower mean squared error across the tested sample sizes due to being unbiased.
+
+<aside>
+There are $X_{(n)} - n$ known missing tank serial numbers.
+</aside>
+
+<aside>
+My analysis follows that given in Leemis, L. (2020). Mathematical Statistics.
+</aside>
+
+<video src="anim/german_tank_anim.mp4" height=400 controls></video>
 
 ### Comparing Estimators for Unif(0, θ)
 The maximum likelihood estimator (MLE), while it has many nice statistics properties, isn't always the best estimator. To estimate θ for Unif(0,θ), the MLE is the maximum of the data, which is biased low. It is an underestimate of the true value of θ. To correct the bias, we can multiply the maximum by $\frac{n+1}{n}$ for an estimator that is unbiased, but has slightly higher variance. However, we see that the result is lower mean-squared error (MSE). We also show the method of moments estimator for reference, which is twice the sample mean.
