@@ -93,6 +93,7 @@ d-article h3 {
 
 video {
 	padding-top: 10px;
+	max-width: 100%;
 }
 
 .highlight {
