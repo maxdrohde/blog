@@ -15,7 +15,12 @@ The below animation shows training data (top left) and test data (top right), wi
 ### Bayesian Inference for a Binomial Proportion
 Bayesian inference can be using to quantity our uncertainty about the parameter $p$ from a statistical model where the data is distributed $\text{Bin}(n,p)$. An example is the bias of a coin. In the below example, the true bias is $p = 0.7$. As the data come in, we can update our posterior distribution for $p$.
 
-<video src="anim/binom_bayes.mp4" height=400 controls></video>
+<video src="anim/binom_bayes.mp4" height=600 controls></video>
+
+### k-Nearest Neighbors Decision Boundary
+k-Nearest Neighbors is a non-parametric classification algorithm that classifies each point to the majority class of the $k$ nearest points. The number of neighbors to use greatly affects the decision boundaries, as shown in the below animation.
+
+<video src="anim/knn_anim.mp4" height=400 controls></video>
 
 ### Bayesian Linear Regression
 Bayesian inference can also be used in linear regression. As the data is collected, we become more confident about the parameters of the linear regression model:

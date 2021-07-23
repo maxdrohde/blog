@@ -1,0 +1,24 @@
+```{r}
+train <-
+train %>%
+  mutate(Age_quartile = as_factor(ntile(Age, 4)))
+```
+
+```{r}
+surv_plot <- function(df, var){
+  df %>%
+    group_by(Survived, {{var}}) %>%
+    summarise(n = n()) %>%
+    mutate(prop = n / sum(n)) %>%
+    filter(Survived == 1) %>%
+    ggplot() +
+    aes(x={{var}}, y=prop, fill={{var}}) +
+    geom_col(position="dodge") +
+    theme_bw() +
+    labs(y = "Survival Proportion")
+}
+
+map(c("Sex", "Pclass", "SibSp", "Embarked", "Parch", "Age_quartile"), ~surv_plot(train, .data[[.x]])) %>%
+  reduce(`+`)
+```
+

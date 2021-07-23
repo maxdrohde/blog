@@ -1,0 +1,275 @@
+---
+draft: true
+title: "Learn tidymodels by predicting Titanic survivorship"
+description: "The Titanic dataset is a classic datasets for testing out prediction methods. We use this dataset to learn the basics the tidymodels framework for statistical modeling and machine learning."
+author:
+  - name: Maximilian Rohde
+    url: https://maximilianrohde.com
+date: 07-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels)
+library(patchwork)
+
+# Set the default ggplot theme
+theme_set(theme_bw)
+
+# Set the number of cores for parallel processing
+doParallel::registerDoParallel(cores=10)
+```
+
+## Overview
+
+The Titanic dataset is a well-known dataset for testing the performance of predictive models. You can download the dataset from Kaggle by going [here](https://www.kaggle.com/c/titanic/data). Note, you will need to create an account to download the data.
+
+We will use this dataset to explore the fundamentals of the `tidymodels` collection of packages in R. The `tidymodels` developers describe it as
+
+> ... a collection of packages for modeling and machine learning using tidyverse principles.^[https://www.tidymodels.org]
+
+(Describe why use tidymodels)
+
+## Additional Resources
+
+- `tidymodels` book: https://www.tmwr.org/
+- David Robinson's ML Monday screencasts: https://www.youtube.com/channel/UCeiiqmVK07qhY-wvg3IZiZQ
+- Julia Silge's screencasts: https://www.youtube.com/channel/UCTTBgWyJl2HrrhQOOc710kA
+- https://www.rebeccabarter.com/blog/2020-03-25_machine_learning/
+
+
+## Data Cleaning
+
+The first step of any data science project is data cleaning. First, we load in the training and test sets.
+
+```{r, message=FALSE}
+# Load in the train and test datasets
+train <- read_csv("data/train.csv")
+test <- read_csv("data/test.csv")
+```
+
+To get an overview of what's in our data `dplyr::glimpse()` and `skimr::skim()`, are useful functions.
+
+```{r}
+glimpse(train)
+```
+
+```{r}
+skimr::skim(train)
+```
+
+We observe that the `Cabin`, `Embarked`, and `Age` columns have missing data. We will need to deal with this.
+
+To simplify things, let's remove columns that we won't use for prediction.
+
+```{r}
+# Remove unwanted columns
+train <-
+  train %>%
+  select(!c(Name, Ticket, Cabin, PassengerId))
+```
+
+Some of the categorical variables have been encoded as numeric. We will fix this by converting them to factors.
+
+```{r}
+# Convert all columns to factor except Age and Fare
+train <-
+  train %>%
+  mutate(across(!c(Age, Fare), as_factor))
+```
+
+We see that about 62% of the passengers in the training set did not survive. Therefore, 62% is the baseline level of accuracy we should expect from any model.
+
+```{r}
+table(train$Survived) / nrow(train)
+```
+
+
+## Model 1: Logistic Regression
+
+```{r}
+logistic_rec <- 
+  recipe(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+         data = train) %>%
+  step_impute_knn(Age, Embarked, neighbors = tune()) %>%  
+  step_dummy(all_nominal(), -all_outcomes()) %>%
+  step_ns(Age, deg_free = tune())
+```
+
+```{r}
+#logistic_rec %>%
+ # prep() %>%
+  #juice() %>%
+ # head()
+```
+
+```{r}
+logistic_spec <-
+  logistic_reg() %>%
+  set_engine("glm")
+```
+
+```{r}
+train_folds <- 
+  train %>%
+  vfold_cv(10)
+```
+
+```{r}
+logistic_wflow <-
+  workflow() %>%
+  add_recipe(logistic_rec) %>%
+  add_model(logistic_spec)
+```
+
+```{r}
+cv <- 
+  logistic_wflow %>%
+  tune_grid(train_folds, grid = crossing(neighbors = 1:30,
+                                         deg_free = 1:5))
+```
+
+```{r}
+cv %>%
+  collect_metrics()
+```
+
+```{r}
+cv %>%
+  autoplot()
+```
+
+## GLMNET
+
+```{r}
+glmnet_rec <- 
+  recipe(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare + Embarked,
+         data = train) %>%
+  step_impute_knn(Age, Embarked, neighbors = tune()) %>%  
+  step_dummy(all_nominal(), -all_outcomes()) %>%
+  step_ns(Age, deg_free = tune())
+```
+
+```{r}
+glmnet_spec <-
+  logistic_reg(penalty=tune()) %>%
+  set_engine("glmnet")
+```
+
+```{r}
+glmnet_wflow <-
+  workflow() %>%
+  add_recipe(glmnet_rec) %>%
+  add_model(glmnet_spec)
+```
+
+```{r}
+cv <- 
+  glmnet_wflow %>%
+  tune_grid(train_folds, grid=crossing(neighbors=1:10, ))
+```
+
+```{r}
+cv %>%
+  collect_metrics()
+```
+
+```{r}
+cv %>%
+  autoplot()
+```
+
+## Random forest
+
+## xgboost
+
+```{r}
+xgb_spec <- boost_tree(
+  mtry = tune(),
+  trees = tune(),
+  min_n = tune(),
+  tree_depth = tune(),
+  learn_rate = tune(),
+  loss_reduction = tune(),
+  sample_size = tune()
+) %>%
+  set_engine("xgboost") %>%
+  set_mode("classification")
+```
+
+```{r}
+xgb_grid <- 
+  grid_latin_hypercube(
+  finalize(mtry(), train),
+  trees(),
+  min_n(),
+  tree_depth(),
+  learn_rate(),
+  loss_reduction(),
+  sample_size = sample_prop(),
+  size=1000
+)
+```
+
+```{r}
+xgb_wf <-
+  workflow() %>%
+  add_formula(Survived ~ .) %>%
+  add_model(xgb_spec)
+```
+
+```{r}
+train_folds <- 
+  train %>%
+  vfold_cv(10)
+```
+
+
+```{r}
+xgb_res <-
+  tune_grid(
+    xgb_wf,
+    resamples = train_folds,
+    grid = xgb_grid
+  )
+```
+
+```{r}
+xgb_res %>%
+  collect_metrics() %>%
+  filter(.metric == "accuracy") %>%
+  arrange(desc(mean))
+```
+```{r}
+xgboost_params <- parameters(
+  finalize(mtry(), train),
+  trees(),
+  min_n(),
+  tree_depth(),
+  learn_rate(),
+  loss_reduction(),
+  sample_size = sample_prop()
+)
+```
+
+
+```{r}
+search_res <-
+  xgb_wf %>% 
+  tune_bayes(
+    resamples = train_folds,
+    param_info = xgboost_params,
+    # Generate five at semi-random to start
+    initial = 100,
+    iter = 50,
+    metrics = metric_set(accuracy),
+    control = control_bayes(no_improve = 30, verbose = TRUE)
+  )
+```
+
+
+
