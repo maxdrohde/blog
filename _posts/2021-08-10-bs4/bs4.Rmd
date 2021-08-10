@@ -40,7 +40,7 @@ bookdown::create_bs4_book("your_project_name_here")
 
 This will create the project in your current directory.
 
-Now, click on the `.Rproj` file with the project directory to open the project in RStudio. You will see the files of the example like this:
+Now, click on the `.Rproj` file within the project directory to open the project in RStudio. You will see the files of the example like this:
 
 ![Examples bs4 files](img1.png)
 
