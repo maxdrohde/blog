@@ -11,7 +11,15 @@
       <link>https://maximilianrohde.com</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Creating a bookdown book with the bs4 theme</title>
+      <dc:creator>Maximilian Rohde</dc:creator>
+      <link>https://maximilianrohde.com/posts/2021-08-10-bs4</link>
+      <description>A short guide to creating a bookdown book using the bs4 theme</description>
+      <guid>https://maximilianrohde.com/posts/2021-08-10-bs4</guid>
+      <pubDate>Tue, 10 Aug 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>What is Gradient Descent? (Part I)</title>
       <dc:creator>Maximilian Rohde</dc:creator>
@@ -47,15 +55,6 @@
       <guid>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</guid>
       <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
       <media:content url="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>What is a statistic?</title>
-      <dc:creator>Maximilian Rohde</dc:creator>
-      <link>https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic</link>
-      <description>Exploring the idea of a statistic by simulating dice rolls in R</description>
-      <guid>https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic</guid>
-      <pubDate>Tue, 08 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://maximilianrohde.com/posts/2020-12-08-what-is-a-statistic/preview.png" medium="image" type="image/png" width="640" height="391"/>
     </item>
   </channel>
 </rss>
