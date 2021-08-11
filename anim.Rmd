@@ -12,6 +12,10 @@ The below animation shows training data (top left) and test data (top right), wi
 
 <video src="anim/spline_overfitting.mp4" height=500 controls></video>
 
+### Example of collider bias
+
+<img src="anim/collider.gif"/>
+
 ### Bayesian Inference for a Binomial Proportion
 Bayesian inference can be using to quantity our uncertainty about the parameter $p$ from a statistical model where the data is distributed $\text{Bin}(n,p)$. An example is the bias of a coin. In the below example, the true bias is $p = 0.7$. As the data come in, we can update our posterior distribution for $p$.
 
