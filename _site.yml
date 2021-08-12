@@ -11,7 +11,7 @@ theme: theme.css
 base_url: https://maximilianrohde.com
 repository_url: https://github.com/maxdrohde/blog
 twitter:
-  site: "@MaxRohde8"
+  site: "@max_d_rohde"
 description: ""
 output_dir: "_site"
 navbar:
@@ -30,7 +30,7 @@ navbar:
     - icon: ai ai-google-scholar-square ai-1x
       href: https://scholar.google.com/citations?user=nAFvhkEAAAAJ&hl=en
     - icon: fab fa-twitter fa-1x
-      href: https://twitter.com/MaxRohde8
+      href: https://twitter.com/max_d_rohde
 collections:
   posts:
     share: [twitter, linkedin]
