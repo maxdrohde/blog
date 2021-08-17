@@ -37,6 +37,16 @@ The model was fit using [Stan](https://mc-stan.org) to do the MCMC sampling and 
 
 <video src="anim/bayes_lin_reg.mp4" height=400 controls></video>
 
+### Calculating π with Monte Carlo Estimation
+
+Monte Carlo estimation is a technique for solving deterministic problems by random sampling.
+
+For example, you can compute π by uniform sampling within a square for $x \in [-1,1], y \in [-1,1]$, and rejecting the points where $x^2 + y^2 > 1$.
+
+Then $\pi = \text{(Proportion not rejected)} \times 4$.
+
+<video src="anim/pi_monte_carlo.mp4" height=400 controls></video>
+
 ### Overfitting in Polynomial Regression
 Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.
 
