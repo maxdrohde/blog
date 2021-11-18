@@ -22,7 +22,7 @@ Communicating science is as important as research to me. The past few years I ha
 In my free time I enjoy cooking (and collecting cookbooks), playing funk guitar, and swimming.
 
 ## Contact
-You can contact me at <a href="mailto:maxdrohde@gmail.com">maxdrohde@gmail.com</a>. I also post on [Twitter](https://twitter.com/MaxRohde8).
+You can contact me at <a href="mailto:maxdrohde@gmail.com">maxdrohde@gmail.com</a>. I also post on [Twitter](https://twitter.com/max_d_rohde).
 
 My GitHub can here found [here](https://github.com/maxdrohde). I mainly code in R and Python.
 

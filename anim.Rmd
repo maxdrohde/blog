@@ -12,9 +12,8 @@ The below animation shows training data (top left) and test data (top right), wi
 
 <video src="anim/spline_overfitting.mp4" height=500 controls></video>
 
-### Example of collider bias
-
-<img src="anim/collider.gif"/>
+### Example of link function misspecification in GLM for binary outcomes
+<video src="anim/binomial_link.mp4" height=300 controls></video>
 
 ### Bayesian Inference for a Binomial Proportion
 Bayesian inference can be using to quantity our uncertainty about the parameter $p$ from a statistical model where the data is distributed $\text{Bin}(n,p)$. An example is the bias of a coin. In the below example, the true bias is $p = 0.7$. As the data come in, we can update our posterior distribution for $p$.
@@ -51,6 +50,10 @@ Then $\pi = \text{(Proportion not rejected)} \times 4$.
 Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.
 
 <video src="anim/overfitting.mp4" height=400 controls></video>
+
+### Example of collider bias
+
+<img src="anim/collider.gif"/>
 
 ### Using Quantile-Quantile Plots to Detect Depatures from Normality
 

@@ -56,7 +56,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
+code span.at { } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
 code span.cf { color: #007ba5; } /* ControlFlow */
@@ -77,13 +77,14 @@ code span.kw { color: #007ba5; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
 code span.ot { color: #007ba5; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
+code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
 code span.st { color: #20794d; } /* String */
 code span.va { color: #111111; } /* Variable */
 code span.vs { color: #20794d; } /* VerbatimString */
 code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </style>
+
 
   <!--radix_placeholder_meta_tags-->
   <title>Max Rohde: Animations</title>
@@ -457,7 +458,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </style>
 
-  <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
   <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
   <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
   <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
@@ -1605,7 +1606,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
-        var refHtml = $('#ref-' + $(this).attr('data-cites')).html();
+        var refs = $(this).attr('data-cites').split(" ");
+        var refHtml = refs.map(function(ref) {
+          return "<p>" + $('#ref-' + ref).html() + "</p>";
+        }).join("\n");
         window.tippy(this, {
           allowHTML: true,
           content: refHtml,
@@ -2111,7 +2115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     color: var(--hover-color, white);
   }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.10/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2178,8 +2182,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The below animation shows training data (top left) and test data (top right), with the true data generating function as the gray dashed line. We see that the best performance on the test set is obtained at about 5 degrees of freedom, while the training error goes to zero, a clear sign of overfitting.</p>
 <video src="anim/spline_overfitting.mp4" height="500" controls>
 </video>
-<h3 id="example-of-collider-bias">Example of collider bias</h3>
-<p><img src="anim/collider.gif"/></p>
+<h3 id="example-of-link-function-misspecification-in-glm-for-binary-outcomes">Example of link function misspecification in GLM for binary outcomes</h3>
+<video src="anim/binomial_link.mp4" height="300" controls>
+</video>
 <h3 id="bayesian-inference-for-a-binomial-proportion">Bayesian Inference for a Binomial Proportion</h3>
 <p>Bayesian inference can be using to quantity our uncertainty about the parameter <span class="math inline">\(p\)</span> from a statistical model where the data is distributed <span class="math inline">\(\text{Bin}(n,p)\)</span>. An example is the bias of a coin. In the below example, the true bias is <span class="math inline">\(p = 0.7\)</span>. As the data come in, we can update our posterior distribution for <span class="math inline">\(p\)</span>.</p>
 <video src="anim/binom_bayes.mp4" height="600" controls>
@@ -2208,6 +2213,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.</p>
 <video src="anim/overfitting.mp4" height="400" controls>
 </video>
+<h3 id="example-of-collider-bias">Example of collider bias</h3>
+<p><img src="anim/collider.gif"/></p>
 <h3 id="using-quantile-quantile-plots-to-detect-depatures-from-normality">Using Quantile-Quantile Plots to Detect Depatures from Normality</h3>
 <p>Quantile-quantile plots are a useful tool for assessing the fit of data to a given distribution. This animation shows Q-Q plots for t-distributed data with various degrees of freedom. We see that the Q-Q plot shows more clearly the departure from normality compared to the histogram.</p>
 <video src="anim/qq_tdist.mp4" height="400" controls>
