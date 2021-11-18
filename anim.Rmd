@@ -51,6 +51,11 @@ Overfitting is a major problem when fitting complex models to few data points. A
 
 <video src="anim/overfitting.mp4" height=400 controls></video>
 
+### Finding the MLE estimate of the mean for a Normal Distribution
+You can estimate the MLE for the mean of a normal distribution given a dataset by varying the mean until the peak of the log-likelihood is reached. This visually looks like sliding around different candidate distributions until the best match is found. Once the MLE for the mean is found, the variance can be varied in the same fashion (keeping the mean fixed at the MLE) to find the MLE for the variance.
+
+<video src="anim/lik.mp4" height=400 controls></video>
+
 ### Example of collider bias
 
 <img src="anim/collider.gif"/>
@@ -91,11 +96,6 @@ The maximum likelihood estimator (MLE), while it has many nice statistics proper
 Estimators of central tendency can have very different properties. For Unif(0,1), the mean, median, and midrange (defined by $\frac{\text{max} - \text{min}}{2}$) are consistent estimators of the center, but the median has high variance and the midrange is biased.
 
 <video src="anim/unif_center.mp4" height=400 controls></video>
-
-### Finding the MLE estimate of the mean for a Normal Distribution
-You can estimate the MLE for the mean of a normal distribution given a dataset by varying the mean until the peak of the log-likelihood is reached. This visually looks like sliding around different candidate distributions until the best match is found. Once the MLE for the mean is found, the variance can be varied in the same fashion (keeping the mean fixed at the MLE) to find the MLE for the variance.
-
-<video src="anim/lik.mp4" height=400 controls></video>
 
 ### Sampling Distribution of the Mean for the Gamma Distribution
 As sample size increases, the sampling distribution of the mean

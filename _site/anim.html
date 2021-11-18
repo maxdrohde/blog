@@ -2213,6 +2213,10 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>Overfitting is a major problem when fitting complex models to few data points. As a simple example, polynomial regression can fit noise in the data rather than the true model. Here the true model is quadratic with error that is normally distributed with mean zero. As the degree of the polynomial increases, the model rapidly overfits the data. At the extreme, if the degree of the polynomial is greater than (Number of points - 1), then the fitted polynomial will pass through every data point.</p>
 <video src="anim/overfitting.mp4" height="400" controls>
 </video>
+<h3 id="finding-the-mle-estimate-of-the-mean-for-a-normal-distribution">Finding the MLE estimate of the mean for a Normal Distribution</h3>
+<p>You can estimate the MLE for the mean of a normal distribution given a dataset by varying the mean until the peak of the log-likelihood is reached. This visually looks like sliding around different candidate distributions until the best match is found. Once the MLE for the mean is found, the variance can be varied in the same fashion (keeping the mean fixed at the MLE) to find the MLE for the variance.</p>
+<video src="anim/lik.mp4" height="400" controls>
+</video>
 <h3 id="example-of-collider-bias">Example of collider bias</h3>
 <p><img src="anim/collider.gif"/></p>
 <h3 id="using-quantile-quantile-plots-to-detect-depatures-from-normality">Using Quantile-Quantile Plots to Detect Depatures from Normality</h3>
@@ -2240,10 +2244,6 @@ My analysis follows that given in Leemis, L. (2020). Mathematical Statistics.
 <h3 id="comparing-estimators-for-center-of-unif01">Comparing Estimators for Center of Unif(0,1)</h3>
 <p>Estimators of central tendency can have very different properties. For Unif(0,1), the mean, median, and midrange (defined by <span class="math inline">\(\frac{\text{max} - \text{min}}{2}\)</span>) are consistent estimators of the center, but the median has high variance and the midrange is biased.</p>
 <video src="anim/unif_center.mp4" height="400" controls>
-</video>
-<h3 id="finding-the-mle-estimate-of-the-mean-for-a-normal-distribution">Finding the MLE estimate of the mean for a Normal Distribution</h3>
-<p>You can estimate the MLE for the mean of a normal distribution given a dataset by varying the mean until the peak of the log-likelihood is reached. This visually looks like sliding around different candidate distributions until the best match is found. Once the MLE for the mean is found, the variance can be varied in the same fashion (keeping the mean fixed at the MLE) to find the MLE for the variance.</p>
-<video src="anim/lik.mp4" height="400" controls>
 </video>
 <h3 id="sampling-distribution-of-the-mean-for-the-gamma-distribution">Sampling Distribution of the Mean for the Gamma Distribution</h3>
 <p>As sample size increases, the sampling distribution of the mean</p>
