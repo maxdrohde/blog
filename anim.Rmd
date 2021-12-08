@@ -25,6 +25,10 @@ k-Nearest Neighbors is a non-parametric classification algorithm that classifies
 
 <video src="anim/knn_anim.mp4" height=400 controls></video>
 
+### Simple MCMC Animation
+
+<video src="anim/mcmc_anim.mp4" height=400 controls></video>
+
 ### Bayesian Linear Regression
 Bayesian inference can also be used in linear regression. As the data is collected, we become more confident about the parameters of the linear regression model:
 
