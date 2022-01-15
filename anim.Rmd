@@ -12,6 +12,12 @@ The below animation shows training data (top left) and test data (top right), wi
 
 <video src="anim/spline_overfitting.mp4" height=500 controls></video>
 
+### Illustrating the bias-variance tradeoff with the KNN and Least-Squares classifiers
+Comparing the least-squares classifier to the KNN classifier, fit on bootstrap resamples, demonstrates the bias-variance tradeoff. The black line is the true 0.5 probability contour, the red line is the estimated 0.5 probability contour. Data from Elements of Statistical Learning.
+
+<video src="anim/knn_vs_ls.mp4" height=500 controls></video>
+
+
 ### Example of link function misspecification in GLM for binary outcomes
 <video src="anim/binomial_link.mp4" height=300 controls></video>
 
