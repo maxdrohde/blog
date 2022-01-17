@@ -1514,9 +1514,9 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p><img src="oddsratiodichotomize_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
 </div>
-<p>Assume that to study the effect of age on having the disease, researchers decide to sample subjects from the population and record if they have the disease. For simplicity, assume that they sample patients uniformly within a given age range. We will show that dichotomizing age at a cutpoint is not a good idea, and can lead to estimates that can be greatly affected by the chosen age range to be sampled.</p>
-<p>To dichotomize the predictor variable, researchers decide to compare the incidence of disease among old (age &gt; 50) and young (age &lt; 50) patients and calculate an odds ratio, instead of using age as a continuous variable. The below simulation shows the results of two scenarios.</p>
-<p>First, assume the researchers sample 10,000 subjects with ages between 40 and 60. Second, assume they sample 10,000 subjects with ages between 20 and 80. We show that the choices of inclusion criteria has a large effect on the odds ratio comparing odds of disease between young and old subjects, but the estimates provided by logistic regression are unchanged.</p>
+<p>We decide to sample subjects from the population and record if they have the disease. For simplicity, assume we sample patients uniformly within a given age range. We will show that dichotomizing age at a cutpoint is not a good idea, and can lead to estimates that can be greatly affected by the chosen age range to be sampled.</p>
+<p>To dichotomize the predictor variable, let’s compare the incidence of disease among old (age &gt; 50) and young (age &lt; 50) patients and calculate an odds ratio, instead of using age as a continuous variable. The below simulation shows the results of two scenarios. As a comparison, we also fit a logistic regression using continuous age.</p>
+<p>First, we sample 10,000 subjects with ages between 40 and 60. Second, we sample 10,000 subjects with ages between 20 and 80. We show that the choices of inclusion criteria has a large effect on the odds ratio comparing odds of disease between young and old subjects, but the estimates provided by logistic regression are unchanged.</p>
 <h2 id="simulation">Simulation</h2>
 <h3 id="sample-from-ages-40-to-60">Sample from ages 40 to 60</h3>
 <div class="layout-chunk" data-layout="l-body">
