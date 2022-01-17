@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
   <meta name="generator" content="distill" />
-  <link rel="alternate" type="application/rss+xml" href="https://maximilianrohde.com/index.xml" />
 
   <style type="text/css">
   /* Hide doc at startup (prevent jankiness while JS renders/transforms) */
@@ -88,378 +87,39 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 
   <!--radix_placeholder_meta_tags-->
-  <title>Max Rohde: Recent Posts</title>
+  <title>Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria</title>
+
+  <meta property="description" itemprop="description" content="A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions."/>
 
 
-  <link rel="icon" type="image/vnd.microsoft.icon" href="images/favicon.ico"/>
-
+  <!--  https://schema.org/Article -->
+  <meta property="article:published" itemprop="datePublished" content="2022-01-16"/>
+  <meta property="article:created" itemprop="dateCreated" content="2022-01-16"/>
+  <meta name="article:author" content="Maximilian Rohde"/>
 
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-  <meta property="og:title" content="Max Rohde: Recent Posts"/>
+  <meta property="og:title" content="Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria"/>
   <meta property="og:type" content="article"/>
+  <meta property="og:description" content="A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions."/>
   <meta property="og:locale" content="en_US"/>
-  <meta property="og:site_name" content="Max Rohde"/>
 
   <!--  https://dev.twitter.com/cards/types/summary -->
   <meta property="twitter:card" content="summary"/>
-  <meta property="twitter:title" content="Max Rohde: Recent Posts"/>
-  <meta property="twitter:site" content="@max_d_rohde"/>
+  <meta property="twitter:title" content="Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria"/>
+  <meta property="twitter:description" content="A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions."/>
 
   <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
   <script type="text/json" id="radix-rmarkdown-metadata">
-  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","site","listing"]}},"value":[{"type":"character","attributes":{},"value":["Recent Posts"]},{"type":"character","attributes":{},"value":["distill::distill_website"]},{"type":"character","attributes":{},"value":["posts"]}]}
+  {"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["title","description","author","date","output"]}},"value":[{"type":"character","attributes":{},"value":["Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria"]},{"type":"character","attributes":{},"value":["A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.\n"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name","url"]}},"value":[{"type":"character","attributes":{},"value":["Maximilian Rohde"]},{"type":"character","attributes":{},"value":["https://maximilianrohde.com"]}]}]},{"type":"character","attributes":{},"value":["2022-01-16"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]}]}
   </script>
   <!--/radix_placeholder_rmarkdown_metadata-->
-  <!--radix_placeholder_navigation_in_header-->
-  <meta name="distill:offset" content=""/>
-
-  <script type="application/javascript">
-
-    window.headroom_prevent_pin = false;
-
-    window.document.addEventListener("DOMContentLoaded", function (event) {
-
-      // initialize headroom for banner
-      var header = $('header').get(0);
-      var headerHeight = header.offsetHeight;
-      var headroom = new Headroom(header, {
-        tolerance: 5,
-        onPin : function() {
-          if (window.headroom_prevent_pin) {
-            window.headroom_prevent_pin = false;
-            headroom.unpin();
-          }
-        }
-      });
-      headroom.init();
-      if(window.location.hash)
-        headroom.unpin();
-      $(header).addClass('headroom--transition');
-
-      // offset scroll location for banner on hash change
-      // (see: https://github.com/WickyNilliams/headroom.js/issues/38)
-      window.addEventListener("hashchange", function(event) {
-        window.scrollTo(0, window.pageYOffset - (headerHeight + 25));
-      });
-
-      // responsive menu
-      $('.distill-site-header').each(function(i, val) {
-        var topnav = $(this);
-        var toggle = topnav.find('.nav-toggle');
-        toggle.on('click', function() {
-          topnav.toggleClass('responsive');
-        });
-      });
-
-      // nav dropdowns
-      $('.nav-dropbtn').click(function(e) {
-        $(this).next('.nav-dropdown-content').toggleClass('nav-dropdown-active');
-        $(this).parent().siblings('.nav-dropdown')
-           .children('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $("body").click(function(e){
-        $('.nav-dropdown-content').removeClass('nav-dropdown-active');
-      });
-      $(".nav-dropdown").click(function(e){
-        e.stopPropagation();
-      });
-    });
+  
+  <script type="text/json" id="radix-resource-manifest">
+  {"type":"character","attributes":{},"value":["oddsratiodichotomize_files/figure-html5/unnamed-chunk-2-1.png"]}
   </script>
-
-  <style type="text/css">
-
-  /* Theme (user-documented overrideables for nav appearance) */
-
-  .distill-site-nav {
-    color: rgba(255, 255, 255, 0.8);
-    background-color: #0F2E3D;
-    font-size: 15px;
-    font-weight: 300;
-  }
-
-  .distill-site-nav a {
-    color: inherit;
-    text-decoration: none;
-  }
-
-  .distill-site-nav a:hover {
-    color: white;
-  }
-
-  @media print {
-    .distill-site-nav {
-      display: none;
-    }
-  }
-
-  .distill-site-header {
-
-  }
-
-  .distill-site-footer {
-
-  }
-
-
-  /* Site Header */
-
-  .distill-site-header {
-    width: 100%;
-    box-sizing: border-box;
-    z-index: 3;
-  }
-
-  .distill-site-header .nav-left {
-    display: inline-block;
-    margin-left: 8px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header .nav-left {
-      margin-left: 0;
-    }
-  }
-
-
-  .distill-site-header .nav-right {
-    float: right;
-    margin-right: 8px;
-  }
-
-  .distill-site-header a,
-  .distill-site-header .title {
-    display: inline-block;
-    text-align: center;
-    padding: 14px 10px 14px 10px;
-  }
-
-  .distill-site-header .title {
-    font-size: 18px;
-    min-width: 150px;
-  }
-
-  .distill-site-header .logo {
-    padding: 0;
-  }
-
-  .distill-site-header .logo img {
-    display: none;
-    max-height: 20px;
-    width: auto;
-    margin-bottom: -4px;
-  }
-
-  .distill-site-header .nav-image img {
-    max-height: 18px;
-    width: auto;
-    display: inline-block;
-    margin-bottom: -3px;
-  }
-
-
-
-  @media screen and (min-width: 1000px) {
-    .distill-site-header .logo img {
-      display: inline-block;
-    }
-    .distill-site-header .nav-left {
-      margin-left: 20px;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 20px;
-    }
-    .distill-site-header .title {
-      padding-left: 12px;
-    }
-  }
-
-
-  .distill-site-header .nav-toggle {
-    display: none;
-  }
-
-  .nav-dropdown {
-    display: inline-block;
-    position: relative;
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    border: none;
-    outline: none;
-    color: rgba(255, 255, 255, 0.8);
-    padding: 16px 10px;
-    background-color: transparent;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    margin: 0;
-    margin-top: 1px;
-    z-index: 2;
-  }
-
-  .nav-dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 200px;
-    border: 1px solid rgba(0,0,0,0.15);
-    border-radius: 4px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
-    z-index: 1;
-    margin-top: 2px;
-    white-space: nowrap;
-    padding-top: 4px;
-    padding-bottom: 4px;
-  }
-
-  .nav-dropdown-content hr {
-    margin-top: 4px;
-    margin-bottom: 4px;
-    border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-dropdown-active {
-    display: block;
-  }
-
-  .nav-dropdown-content a, .nav-dropdown-content .nav-dropdown-header {
-    color: black;
-    padding: 6px 24px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
-  }
-
-  .nav-dropdown-content .nav-dropdown-header {
-    display: block;
-    padding: 5px 24px;
-    padding-bottom: 0;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: #999999;
-    white-space: nowrap;
-  }
-
-  .nav-dropdown:hover .nav-dropbtn {
-    color: white;
-  }
-
-  .nav-dropdown-content a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-
-  .nav-right .nav-dropdown-content {
-    margin-left: -45%;
-    right: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header a, .distill-site-header .nav-dropdown  {display: none;}
-    .distill-site-header a.nav-toggle {
-      float: right;
-      display: block;
-    }
-    .distill-site-header .title {
-      margin-left: 0;
-    }
-    .distill-site-header .nav-right {
-      margin-right: 0;
-    }
-    .distill-site-header {
-      overflow: hidden;
-    }
-    .nav-right .nav-dropdown-content {
-      margin-left: 0;
-    }
-  }
-
-
-  @media screen and (max-width: 768px) {
-    .distill-site-header.responsive {position: relative; min-height: 500px; }
-    .distill-site-header.responsive a.nav-toggle {
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-    .distill-site-header.responsive a,
-    .distill-site-header.responsive .nav-dropdown {
-      display: block;
-      text-align: left;
-    }
-    .distill-site-header.responsive .nav-left,
-    .distill-site-header.responsive .nav-right {
-      width: 100%;
-    }
-    .distill-site-header.responsive .nav-dropdown {float: none;}
-    .distill-site-header.responsive .nav-dropdown-content {position: relative;}
-    .distill-site-header.responsive .nav-dropdown .nav-dropbtn {
-      display: block;
-      width: 100%;
-      text-align: left;
-    }
-  }
-
-  /* Site Footer */
-
-  .distill-site-footer {
-    width: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    z-index: 3;
-    margin-top: 30px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    text-align: center;
-  }
-
-  /* Headroom */
-
-  d-title {
-    padding-top: 6rem;
-  }
-
-  @media print {
-    d-title {
-      padding-top: 4rem;
-    }
-  }
-
-  .headroom {
-    z-index: 1000;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-
-  .headroom--transition {
-    transition: all .4s ease-in-out;
-  }
-
-  .headroom--unpinned {
-    top: -100px;
-  }
-
-  .headroom--pinned {
-    top: 0;
-  }
-
-  /* adjust viewport for navbar height */
-  /* helps vertically center bootstrap (non-distill) content */
-  .min-vh-100 {
-    min-height: calc(100vh - 100px) !important;
-  }
-
-  </style>
-
-  <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet"/>
-  <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet"/>
-  <script src="site_libs/headroom-0.9.4/headroom.min.js"></script>
+  <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
   <!--radix_placeholder_distill-->
 
@@ -1777,665 +1437,204 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
   </script>
 
-  <style type="text/css">
-  /* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  /* This must remain at the top of this file.                 */
-
-
-
-  html {
-    /*-- Main font sizes --*/
-    --title-size:      50px;
-    --body-size:       1.06rem;
-    --code-size:       14px;
-    --aside-size:      12px;
-    --fig-cap-size:    13px;
-    /*-- Main font colors --*/
-    --title-color:     #000000;
-    --header-color:    rgba(0, 0, 0, 0.8);
-    --body-color:      rgba(0, 0, 0, 0.8);
-    --aside-color:     rgba(0, 0, 0, 0.6);
-    --fig-cap-color:   rgba(0, 0, 0, 0.6);
-    /*-- Specify custom fonts ~~~ must be imported above   --*/
-    --heading-font:    sans-serif;
-    --mono-font:       monospace;
-    --body-font:       sans-serif;
-    --navbar-font:     sans-serif;  /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-    --heading-size:    0.6rem;
-    --heading-color:   rgba(0, 0, 0, 0.5);
-    --body-size:       0.8rem;
-    --body-color:      rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-    --heading-size:    18px;
-    --contents-size:   13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-    --heading-size:    15px;
-    --heading-color:   rgba(0, 0, 0, 0.65);
-    --text-size:       0.8em;
-    --text-color:      rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-    --title-size:       18px;
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  .distill-site-footer {
-    --text-color:       rgba(255, 255, 255, 0.8);
-    --text-size:        15px;
-    --hover-color:      white;
-    --bkgd-color:       #0F2E3D;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  </style>
-  <style type="text/css">/* base variables */
-
-  /* Edit the CSS properties in this file to create a custom
-     Distill theme. Only edit values in the right column
-     for each row; values shown are the CSS defaults.
-     To return any property to the default,
-     you may set its value to: unset
-     All rows must end with a semi-colon.                      */
-
-  /* Optional: embed custom fonts here with `@import`          */
-  @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noticia+Text:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
-  @import url("https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css");
-  /* This must remain at the top of this file.                 */
-
-  html {
-  	/*-- Main font sizes --*/
-  	--title-size: 30px;
-  	--body-size: 0.97rem;
-  	--code-size: 0.90rem;
-  	--aside-size: 0.80rem;
-  	--fig-cap-size: 0.80rem;
-  	/*-- Main font colors --*/
-  	--title-color: #000000;
-  	--header-color: #000000;
-  	--body-color: #000000;
-  	--aside-color: #000000;
-  	--fig-cap-color: #000000;
-  	/*-- Specify custom fonts ~~~ must be imported above   --*/
-  	--heading-font: "Lato", sans-serif;
-  	--mono-font: "Source Code Pro", monospace;
-  	--body-font: "Lato", sans-serif;
-  	--navbar-font: "Lato", sans-serif; /* websites + blogs only */
-  }
-
-  /*-- ARTICLE METADATA --*/
-  d-byline {
-  	--heading-size: 0.6rem;
-  	--heading-color: rgba(0, 0, 0, 0.5);
-  	--body-size: 0.8rem;
-  	--body-color: rgba(0, 0, 0, 0.8);
-  }
-
-  /*-- ARTICLE TABLE OF CONTENTS --*/
-  .d-contents {
-  	--heading-size: 18px;
-  	--contents-size: 13px;
-  }
-
-  /*-- ARTICLE APPENDIX --*/
-  d-appendix {
-  	--heading-size: 15px;
-  	--heading-color: rgba(0, 0, 0, 0.65);
-  	--text-size: 0.8em;
-  	--text-color: rgba(0, 0, 0, 0.5);
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  /* These properties only apply to Distill sites and blogs  */
-
-  .distill-site-header {
-  	--title-size: 18px;
-  	--text-color: rgba(255, 255, 255, 0.856);
-  	--text-size: 18px;
-  	--hover-color: white;
-  	--bkgd-color: #43658b;
-  }
-
-  .distill-site-footer {
-  	--text-color: rgba(255, 255, 255, 0.8);
-  	--text-size: 15px;
-  	--hover-color: white;
-  	--bkgd-color: #43658b;
-  }
-
-  /*-- Additional custom styles --*/
-  /* Add any additional CSS rules below                      */
-  .distill-site-nav {
-  	font-weight: 700;
-  }
-
-  d-article pre {
-  	background-color: #f6f6f6;
-  }
-
-  d-article h2 {
-  	font-size: 20px;
-  }
-
-  d-article h3 {
-  	font-size: 18px;
-  }
-
-  video {
-  	padding-top: 10px;
-  	max-width: 100%;
-  }
-
-  .highlight {
-  	border: 2px solid #43658b;
-  	padding: 10px;
-  	margin: 15px;
-  }</style>
-  <style type="text/css">
-  /* base style */
-
-  /* FONT FAMILIES */
-
-  :root {
-    --heading-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-    --mono-default: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    --body-default: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
-  }
-
-  body,
-  .posts-list .post-preview p,
-  .posts-list .description p {
-    font-family: var(--body-font), var(--body-default);
-  }
-
-  h1, h2, h3, h4, h5, h6,
-  .posts-list .post-preview h2,
-  .posts-list .description h2 {
-    font-family: var(--heading-font), var(--heading-default);
-  }
-
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-family: var(--mono-font), var(--mono-default);
-  }
-
-
-  /*-- TITLE --*/
-  d-title h1,
-  .posts-list > h1 {
-    color: var(--title-color, black);
-  }
-
-  d-title h1 {
-    font-size: var(--title-size, 50px);
-  }
-
-  /*-- HEADERS --*/
-  d-article h1,
-  d-article h2,
-  d-article h3,
-  d-article h4,
-  d-article h5,
-  d-article h6 {
-    color: var(--header-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- BODY --*/
-  d-article > p,  /* only text inside of <p> tags */
-  d-article > ul, /* lists */
-  d-article > ol {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-    font-size: var(--body-size, 1.06rem);
-  }
-
-
-  /*-- CODE --*/
-  d-article div.sourceCode code,
-  d-article pre code {
-    font-size: var(--code-size, 14px);
-  }
-
-  /*-- ASIDE --*/
-  d-article aside {
-    font-size: var(--aside-size, 12px);
-    color: var(--aside-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- FIGURE CAPTIONS --*/
-  figure .caption,
-  figure figcaption,
-  .figure .caption {
-    font-size: var(--fig-cap-size, 13px);
-    color: var(--fig-cap-color, rgba(0, 0, 0, 0.6));
-  }
-
-  /*-- METADATA --*/
-  d-byline h3 {
-    font-size: var(--heading-size, 0.6rem);
-    color: var(--heading-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-byline {
-    font-size: var(--body-size, 0.8rem);
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  d-byline a,
-  d-article d-byline a {
-    color: var(--body-color, rgba(0, 0, 0, 0.8));
-  }
-
-  /*-- TABLE OF CONTENTS --*/
-  .d-contents nav h3 {
-    font-size: var(--heading-size, 18px);
-  }
-
-  .d-contents nav a {
-    font-size: var(--contents-size, 13px);
-  }
-
-  /*-- APPENDIX --*/
-  d-appendix h3 {
-    font-size: var(--heading-size, 15px);
-    color: var(--heading-color, rgba(0, 0, 0, 0.65));
-  }
-
-  d-appendix {
-    font-size: var(--text-size, 0.8em);
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  d-appendix d-footnote-list a.footnote-backlink {
-    color: var(--text-color, rgba(0, 0, 0, 0.5));
-  }
-
-  /*-- WEBSITE HEADER + FOOTER --*/
-  .distill-site-header .title {
-    font-size: var(--title-size, 18px);
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .distill-site-header a,
-  .nav-dropdown .nav-dropbtn {
-    font-family: var(--navbar-font), var(--heading-default);
-  }
-
-  .nav-dropdown .nav-dropbtn {
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    font-size: var(--text-size, 15px);
-  }
-
-  .distill-site-header a:hover,
-  .nav-dropdown:hover .nav-dropbtn {
-    color: var(--hover-color, white);
-  }
-
-  .distill-site-header {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer {
-    font-size: var(--text-size, 15px);
-    color: var(--text-color, rgba(255, 255, 255, 0.8));
-    background-color: var(--bkgd-color, #0F2E3D);
-  }
-
-  .distill-site-footer a:hover {
-    color: var(--hover-color, white);
-  }</style>
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-  <script src="site_libs/popper-2.6.0/popper.min.js"></script>
-  <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
-  <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
-  <script src="site_libs/tippy-6.2.7/tippy.umd.min.js"></script>
-  <script src="site_libs/anchor-4.2.2/anchor.min.js"></script>
-  <script src="site_libs/bowser-1.9.3/bowser.min.js"></script>
-  <script src="site_libs/webcomponents-2.0.0/webcomponents.js"></script>
-  <script src="site_libs/distill-2.2.21/template.v2.js"></script>
+  <script src="oddsratiodichotomize_files/header-attrs-2.11/header-attrs.js"></script>
+  <script src="oddsratiodichotomize_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+  <script src="oddsratiodichotomize_files/popper-2.6.0/popper.min.js"></script>
+  <link href="oddsratiodichotomize_files/tippy-6.2.7/tippy.css" rel="stylesheet" />
+  <link href="oddsratiodichotomize_files/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
+  <script src="oddsratiodichotomize_files/tippy-6.2.7/tippy.umd.min.js"></script>
+  <script src="oddsratiodichotomize_files/anchor-4.2.2/anchor.min.js"></script>
+  <script src="oddsratiodichotomize_files/bowser-1.9.3/bowser.min.js"></script>
+  <script src="oddsratiodichotomize_files/webcomponents-2.0.0/webcomponents.js"></script>
+  <script src="oddsratiodichotomize_files/distill-2.2.21/template.v2.js"></script>
   <!--radix_placeholder_site_in_header-->
   <!--/radix_placeholder_site_in_header-->
 
 
 </head>
 
-<body class="layout-listing">
+<body>
 
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Recent Posts","authors":[]}
+{"title":"Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria","description":"A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.","authors":[{"author":"Maximilian Rohde","authorURL":"https://maximilianrohde.com","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2022-01-16T00:00:00.000-06:00","citationText":"Rohde, 2022"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
 <!--radix_placeholder_navigation_before_body-->
-<header class="header header--fixed" role="banner">
-<nav class="distill-site-nav distill-site-header">
-<div class="nav-left">
-<a href="index.html" class="title">Max Rohde</a>
-</div>
-<div class="nav-right">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="anim.html">Animations</a>
-<a href="resume.pdf">Resume</a>
-<a href="https://github.com/maxdrohde">
-<i class="fab fa-github fa-1x" aria-hidden="true"></i>
-</a>
-<a href="https://scholar.google.com/citations?user=nAFvhkEAAAAJ&amp;hl=en">
-<i class="fa ai ai-google-scholar-square ai-1x" aria-hidden="true"></i>
-</a>
-<a href="https://twitter.com/max_d_rohde">
-<i class="fab fa-twitter fa-1x" aria-hidden="true"></i>
-</a>
-<a href="javascript:void(0);" class="nav-toggle">&#9776;</a>
-</div>
-</nav>
-</header>
 <!--/radix_placeholder_navigation_before_body-->
 <!--radix_placeholder_site_before_body-->
 <!--/radix_placeholder_site_before_body-->
-<!--radix_placeholder_article_listing-->
-
-
-<script type="application/javascript">
-
-function init_posts_list() {
-
-  function load_image(img) {
-    var src = $(img).attr('data-src');
-    if (src) {
-      $(img).attr('src', src);
-      $(img).on("load", function() {
-        img.removeAttribute('data-src');
-      });
-    }
-  }
-
-  function set_posts_visible(posts, visible) {
-    if (visible) {
-
-      // show bottom border by default
-      $(posts).removeClass('post-preview-last');
-
-      // apply limits if need be
-      var max_posts = 25;
-      var apply_limits = $('.posts-container').hasClass('posts-apply-limit');
-      if (apply_limits && posts.length > max_posts) {
-        posts = $(posts).slice(0, max_posts);
-      } else {
-        $('.posts-more a').addClass('hidden');
-      }
-
-      // apply last style
-      $(posts.slice(-1)[0]).addClass('post-preview-last');
-
-      $(posts).removeClass('hidden');
-      $(posts).find('img[data-src]').each(function(i, img) {
-        load_image(img);
-      });
-    } else {
-      $(posts).addClass('hidden');
-    }
-  }
-
-  function apply_hash_filter() {
-
-    // clear active state
-    $('.categories .active').removeClass('active');
-
-    // mark all posts invisible to start
-    set_posts_visible($('.posts-list').children('a'), false);
-
-    // if we have a hash filter
-    if (window.location.hash && window.location.hash.startsWith("#category:")) {
-
-      // mark posts that match the category visible
-      var page_category = window.location.hash.replace(/^#category:/, "");
-      page_category = decodeURIComponent(page_category)
-      var posts = $('.post-metadata').map(function(idx, script) {
-        var metadata = $.parseJSON($(script).html());
-        var post = null;
-        $.each(metadata.categories, function(idx, category) {
-          category = category.replace(/ /g,"_");
-          if ((page_category || '').toLowerCase() === "articles" || category === page_category) {
-            post = $(script).parent().get();
-            return false;
-          }
-        });
-        return post;
-      });
-      set_posts_visible(posts, true);
-
-      // mark the hash active
-      $('.categories li>a[href="' + decodeURIComponent(window.location.hash) + '"]').addClass('active');
-
-      // update the list_caption
-      var list_caption = $('.posts-list-caption');
-      var caption = (page_category || '').toLowerCase() === "articles"
-        ? list_caption.attr('data-caption')
-        : ('Category: ' + page_category.replace(/_/g," "));
-      list_caption.text(caption);
-
-    } else {
-
-      // no hash filter, make all posts visible (subject to max display)
-      set_posts_visible($('.posts-list').children(), true);
-
-      // reset list caption
-      var list_caption = $('.posts-list-caption');
-      list_caption.text(list_caption.attr('data-caption'));
-
-
-    }
-  }
-
-  // more articles
-  function apply_post_limits(apply) {
-    if (apply) {
-      $('.posts-container').addClass('posts-apply-limit');
-      $('.posts-more a').removeClass('hidden');
-    } else {
-      $('.posts-container').removeClass('posts-apply-limit');
-      $('.posts-more a').addClass('hidden');
-    }
-  }
-
-  // click handling for tags
-  $('.dt-tag').click(function(ev) {
-    window.location.hash = '#category:' + $(this).text().replace(/ /g, "_");
-    return false;
-  })
-
-  // hash filter handling
-  apply_hash_filter();
-  $(window).on('hashchange',function() {
-    apply_post_limits(true);
-    apply_hash_filter();
-  });
-
-  // more articles link
-  $('.posts-more a').click(function(e) {
-    e.preventDefault();
-    apply_post_limits(false);
-    apply_hash_filter();
-    return false;
-  });
-
-}
-
-</script>
-
-
-
-<div class="posts-container posts-apply-limit l-page">
-<div class="posts-list">
-<h1 class="posts-list-caption" data-caption="Recent Posts">Recent Posts</h1>
-<a href="posts/2022-01-16-oddsratiodichotomize/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 16, 2022</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2022-01-16-oddsratiodichotomize/oddsratiodichotomize_files/figure-html5/unnamed-chunk-2-1.png"/>
-</div>
-<div class="description">
-<h2>Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria</h2>
-<div class="dt-tags"></div>
-<p>A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.</p>
-</div>
-</a>
-<a href="posts/2021-08-10-bs4/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Aug. 10, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img/>
-</div>
-<div class="description">
-<h2>Creating a bookdown book with the bs4 theme</h2>
-<div class="dt-tags"></div>
-<p>A short guide to creating a bookdown book using the bs4 theme</p>
-</div>
-</a>
-<a href="posts/2021-01-16-graddescpt1/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 16, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-01-16-graddescpt1/graddescpt1_files/figure-html5/unnamed-chunk-2-1.png"/>
-</div>
-<div class="description">
-<h2>What is Gradient Descent? (Part I)</h2>
-<div class="dt-tags"></div>
-<p>Exploring gradient descent using R and a minimal amount of mathematics</p>
-</div>
-</a>
-<a href="posts/2021-01-13-robustestimators/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 13, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-01-13-robustestimators/robustestimators_files/figure-html5/unnamed-chunk-13-1.png"/>
-</div>
-<div class="description">
-<h2>Statistical simulation of robust estimators with tidyverse tools</h2>
-<div class="dt-tags"></div>
-<p>Tidyverse tools provide a powerful way to do statistical simulations. We demonstrate this approach by evaluating the properties of the mean and median as estimators of center for two distributions.</p>
-</div>
-</a>
-<a href="posts/2021-01-06-gganimatemap/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Jan. 6, 2021</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img src="posts/2021-01-06-gganimatemap/preview.jpg"/>
-</div>
-<div class="description">
-<h2>Using gganimate with ggmap</h2>
-<div class="dt-tags"></div>
-<p>Combining gganimate with ggmap can be used to create animations of geographic data. I give a few examples using data from Nashville Open Data.</p>
-</div>
-</a>
-<a href="posts/2020-12-23-early-stopping-inflates-type-i-error/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 23, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-12-23-early-stopping-inflates-type-i-error/preview.jpg"/>
-</div>
-<div class="description">
-<h2>Repeated testing inflates type I error</h2>
-<div class="dt-tags"></div>
-<p>Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.</p>
-</div>
-</a>
-<a href="posts/2020-12-08-what-is-a-statistic/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
-<div class="metadata">
-<div class="publishedDate">Dec. 8, 2020</div>
-<div class="dt-authors">
-<div class="dt-author">Maximilian Rohde</div>
-</div>
-</div>
-<div class="thumbnail">
-<img data-src="posts/2020-12-08-what-is-a-statistic/preview.png"/>
-</div>
-<div class="description">
-<h2>What is a statistic?</h2>
-<div class="dt-tags"></div>
-<p>Exploring the idea of a statistic by simulating dice rolls in R</p>
-</div>
-</a>
-</div>
-<div class="posts-more">
-<a href="#">More articles &raquo;</a>
-</div>
-</div>
-<!--/radix_placeholder_article_listing-->
 
 <div class="d-title">
-<h1>Recent Posts</h1>
+<h1>Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-
+<p><p>A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.</p></p>
 </div>
 
+<div class="d-byline">
+  Maximilian Rohde <a href="https://maximilianrohde.com" class="uri">https://maximilianrohde.com</a> 
+  
+<br/>2022-01-16
+</div>
 
 <div class="d-article">
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span>
+<span class='fu'><a href='https://rdrr.io/r/base/Random.html'>set.seed</a></span><span class='op'>(</span><span class='fl'>123</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="motivation">Motivation</h2>
+<p>In this document, we will show how calculating an odds ratio based on a dichotomized continuous predictor variable can be manipulated by changing the range of the predictor variable that was sampled (i.e, study inclusion criteria), whereas a logistic regression model that uses the continuous values of the predictor will produce a stable estimate.</p>
+<h2 id="scenario">Scenario</h2>
+<p>Assume that we are interested in a disease where the incidence varies with age.</p>
+<p>We will assume as the true model a simple relationship where the probability of developing the disease is a linear function of age. The below plot shows this relationship.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># True model of disease probability is a linear function of age</span>
+<span class='va'>p_disease</span> <span class='op'>&lt;-</span> <span class='kw'>function</span><span class='op'>(</span><span class='va'>age</span><span class='op'>)</span><span class='op'>{</span>
+  <span class='fl'>0.25</span> <span class='op'>+</span> <span class='fl'>0.0075</span><span class='op'>*</span><span class='va'>age</span>
+<span class='op'>}</span>
+
+<span class='co'># Plot true model</span>
+<span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>age <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>20</span>, <span class='fl'>80</span>, length.out<span class='op'>=</span><span class='fl'>2</span><span class='op'>)</span>, prob <span class='op'>=</span> <span class='fu'>p_disease</span><span class='op'>(</span><span class='va'>age</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://magrittr.tidyverse.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x<span class='op'>=</span><span class='va'>age</span>, y<span class='op'>=</span><span class='va'>prob</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span>title <span class='op'>=</span> <span class='st'>"True probability of having the disease"</span>,
+       x<span class='op'>=</span><span class='st'>"Age"</span>,
+       y<span class='op'>=</span><span class='st'>"P(Disease)"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+<p><img src="oddsratiodichotomize_files/figure-html5/unnamed-chunk-2-1.png" width="624" /></p>
+</div>
+<p>Assume that to study the effect of age on having the disease, researchers decide to sample subjects from the population and record if they have the disease. For simplicity, assume that they sample patients uniformly within a given age range. We will show that dichotomizing age at a cutpoint is not a good idea, and can lead to estimates that can be greatly affected by the chosen age range to be sampled.</p>
+<p>To dichotomize the predictor variable, researchers decide to compare the incidence of disease among old (age &gt; 50) and young (age &lt; 50) patients and calculate an odds ratio, instead of using age as a continuous variable. The below simulation shows the results of two scenarios.</p>
+<p>First, assume the researchers sample 10,000 subjects with ages between 40 and 60. Second, assume they sample 10,000 subjects with ages between 20 and 80. We show that the choices of inclusion criteria has a large effect on the odds ratio comparing odds of disease between young and old subjects, but the estimates provided by logistic regression are unchanged.</p>
+<h2 id="simulation">Simulation</h2>
+<h3 id="sample-from-ages-40-to-60">Sample from ages 40 to 60</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Draw 10,000 patients uniformly between 40 and 60</span>
+<span class='va'>ages</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>10000</span>, min<span class='op'>=</span><span class='fl'>40</span>, max<span class='op'>=</span><span class='fl'>60</span><span class='op'>)</span>
+
+<span class='co'># Calculate true probabilities for each patient</span>
+<span class='va'>probs</span> <span class='op'>&lt;-</span> <span class='fu'>p_disease</span><span class='op'>(</span><span class='va'>ages</span><span class='op'>)</span>
+
+<span class='co'># Generate data where each patient has `probs` probability of having the disease</span>
+<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_dbl</a></span><span class='op'>(</span><span class='va'>probs</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>, size<span class='op'>=</span><span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>-</span><span class='va'>.x</span>, <span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Put simulation data into a data frame</span>
+<span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>age<span class='op'>=</span><span class='va'>ages</span>, prob<span class='op'>=</span><span class='va'>probs</span>, disease<span class='op'>=</span><span class='va'>data</span><span class='op'>)</span>
+
+<span class='co'># Dichotomize at age = 50</span>
+<span class='va'>df</span><span class='op'>$</span><span class='va'>old</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>age</span> <span class='op'>&gt;</span> <span class='fl'>50</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/utils/head.html'>head</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 6 × 4
+    age  prob disease old  
+  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;
+1  45.8 0.593       1 FALSE
+2  55.8 0.668       1 TRUE 
+3  48.2 0.611       0 FALSE
+4  57.7 0.682       1 TRUE 
+5  58.8 0.691       1 TRUE 
+6  40.9 0.557       1 FALSE</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>disease</span>, <span class='va'>df</span><span class='op'>$</span><span class='va'>old</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   
+    FALSE TRUE
+  0  2081 1614
+  1  2976 3329</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>odds_ratio</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='fl'>3329</span> <span class='op'>/</span> <span class='fl'>1614</span><span class='op'>)</span> <span class='op'>/</span> <span class='op'>(</span><span class='fl'>2976</span> <span class='op'>/</span> <span class='fl'>2081</span><span class='op'>)</span>
+
+<span class='va'>odds_ratio</span>
+</code></pre>
+</div>
+<pre><code>[1] 1.442279</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># Fit logistic regression model using continuous age</span>
+<span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>disease</span> <span class='op'>~</span> <span class='va'>age</span>, family<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span><span class='op'>)</span>, data<span class='op'>=</span><span class='va'>df</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+Call:  glm(formula = disease ~ age, family = binomial(), data = df)
+
+Coefficients:
+(Intercept)          age  
+   -1.23211      0.03547  
+
+Degrees of Freedom: 9999 Total (i.e. Null);  9998 Residual
+Null Deviance:      13170 
+Residual Deviance: 13080    AIC: 13080</code></pre>
+</div>
+<h3 id="sample-from-ages-20-to-80">Sample from ages 20 to 80</h3>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>ages</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span><span class='op'>(</span><span class='fl'>10000</span>, min<span class='op'>=</span><span class='fl'>20</span>, max<span class='op'>=</span><span class='fl'>80</span><span class='op'>)</span>
+<span class='va'>probs</span> <span class='op'>&lt;-</span> <span class='fu'>p_disease</span><span class='op'>(</span><span class='va'>ages</span><span class='op'>)</span>
+<span class='va'>data</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://purrr.tidyverse.org/reference/map.html'>map_dbl</a></span><span class='op'>(</span><span class='va'>probs</span>, <span class='op'>~</span><span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>,<span class='fl'>1</span><span class='op'>)</span>, size<span class='op'>=</span><span class='fl'>1</span>, prob<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span><span class='op'>-</span><span class='va'>.x</span>, <span class='va'>.x</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span>
+<span class='va'>df</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://tibble.tidyverse.org/reference/tibble.html'>tibble</a></span><span class='op'>(</span>age<span class='op'>=</span><span class='va'>ages</span>, prob<span class='op'>=</span><span class='va'>probs</span>, disease<span class='op'>=</span><span class='va'>data</span><span class='op'>)</span>
+<span class='va'>df</span><span class='op'>$</span><span class='va'>old</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>age</span> <span class='op'>&gt;</span> <span class='fl'>50</span><span class='op'>)</span>
+
+<span class='fu'><a href='https://rdrr.io/r/base/table.html'>table</a></span><span class='op'>(</span><span class='va'>df</span><span class='op'>$</span><span class='va'>disease</span>, <span class='va'>df</span><span class='op'>$</span><span class='va'>old</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>   
+    FALSE TRUE
+  0  2400 1179
+  1  2625 3796</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>odds_ratio</span> <span class='op'>&lt;-</span> <span class='op'>(</span><span class='fl'>3796</span> <span class='op'>/</span> <span class='fl'>1179</span><span class='op'>)</span> <span class='op'>/</span> <span class='op'>(</span><span class='fl'>2625</span> <span class='op'>/</span> <span class='fl'>2400</span><span class='op'>)</span>
+
+<span class='va'>odds_ratio</span>
+</code></pre>
+</div>
+<pre><code>[1] 2.943705</code></pre>
+</div>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='fu'><a href='https://rdrr.io/r/stats/glm.html'>glm</a></span><span class='op'>(</span><span class='va'>disease</span> <span class='op'>~</span> <span class='va'>age</span>, family<span class='op'>=</span><span class='fu'><a href='https://rdrr.io/r/stats/family.html'>binomial</a></span><span class='op'>(</span><span class='op'>)</span>, data<span class='op'>=</span><span class='va'>df</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code>
+Call:  glm(formula = disease ~ age, family = binomial(), data = df)
+
+Coefficients:
+(Intercept)          age  
+   -1.15573      0.03586  
+
+Degrees of Freedom: 9999 Total (i.e. Null);  9998 Residual
+Null Deviance:      13040 
+Residual Deviance: 12220    AIC: 12230</code></pre>
+</div>
+<h2 id="conclusion">Conclusion</h2>
+<p>We see that when sampling from ages 40 to 60, the dichotomization approach estimated an odds ratio of 1.442279 compared to an odds ratio of 2.943705 when sampling from ages 20 to 80.</p>
+<p>In contrast, when sampling from ages 40 to 60, the logistic regression estimated a regression coefficient for age of 0.03547 compared to a very similar value of 0.03586 when sampling from ages 20 to 80.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2447,10 +1646,7 @@ function init_posts_list() {
 <!--radix_placeholder_site_after_body-->
 <!--/radix_placeholder_site_after_body-->
 <!--radix_placeholder_appendices-->
-<div class="appendix-bottom">
-<h3 id="updates-and-corrections">Corrections</h3>
-<p>If you see mistakes or want to suggest changes, please <a href="https://github.com/maxdrohde/blog/issues/new">create an issue</a> on the source repository.</p>
-</div>
+<div class="appendix-bottom"></div>
 <!--/radix_placeholder_appendices-->
 <!--radix_placeholder_navigation_after_body-->
 <!--/radix_placeholder_navigation_after_body-->

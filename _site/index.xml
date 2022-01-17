@@ -11,7 +11,16 @@
       <link>https://maximilianrohde.com</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 10 Aug 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria</title>
+      <dc:creator>Maximilian Rohde</dc:creator>
+      <link>https://maximilianrohde.com/posts/2022-01-16-oddsratiodichotomize</link>
+      <description>A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.</description>
+      <guid>https://maximilianrohde.com/posts/2022-01-16-oddsratiodichotomize</guid>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://maximilianrohde.com/posts/2022-01-16-oddsratiodichotomize/oddsratiodichotomize_files/figure-html5/unnamed-chunk-2-1.png" medium="image" type="image/png" width="1248" height="768"/>
+    </item>
     <item>
       <title>Creating a bookdown book with the bs4 theme</title>
       <dc:creator>Maximilian Rohde</dc:creator>
@@ -46,15 +55,6 @@
       <guid>https://maximilianrohde.com/posts/2021-01-06-gganimatemap</guid>
       <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://maximilianrohde.com/posts/2021-01-06-gganimatemap/preview.jpg" medium="image" type="image/jpeg"/>
-    </item>
-    <item>
-      <title>Repeated testing inflates type I error</title>
-      <dc:creator>Maximilian Rohde</dc:creator>
-      <link>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</link>
-      <description>Type I error is increased when you test your hypothesis multiple times during the data collection process. Simulations can provide a clear picture of this process.</description>
-      <guid>https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error</guid>
-      <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
-      <media:content url="https://maximilianrohde.com/posts/2020-12-23-early-stopping-inflates-type-i-error/preview.jpg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
