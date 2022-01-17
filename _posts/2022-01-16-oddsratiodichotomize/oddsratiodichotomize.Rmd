@@ -107,6 +107,6 @@ glm(disease ~ age, family=binomial(), data=df)
 ```
 
 ## Conclusion
-We see that when sampling from ages 40 to 60, the dichotomization approach estimated an odds ratio of 1.442279 compared to an odds ratio of 2.943705 when sampling from ages 20 to 80.
+We see that when sampling from ages 40 to 60, the dichotomization approach estimated an odds ratio of 1.44 compared to an odds ratio of 2.94 when sampling from ages 20 to 80.
 
-In contrast, when sampling from ages 40 to 60, the logistic regression estimated a regression coefficient for age of 0.03547 compared to a very similar value of 0.03586 when sampling from ages 20 to 80.
+In contrast, when sampling from ages 40 to 60, the logistic regression estimated a regression coefficient for age of 0.0355 compared to a very similar value of 0.0359 when sampling from ages 20 to 80.
