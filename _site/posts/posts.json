@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2022-03-31-tmerge/",
+    "title": "Getting started with the `tmerge` function in the `survival` package",
+    "description": "The `tmerge` function is used to structure data to represent time-dependent variables in a survival analysis. The post shows a minimal example of how to use `tmerge`.",
+    "author": [
+      {
+        "name": "Maximilian Rohde",
+        "url": "https://maximilianrohde.com"
+      }
+    ],
+    "date": "2022-03-31",
+    "categories": [],
+    "contents": "\n\n\nlibrary(tidyverse)\nlibrary(survival)\n\n\n\nWhy do we need tmerge?\ntalk about what time-dep variable are\nA simple dataset\nUsing tmerge\n\n\n\n",
+    "preview": {},
+    "last_modified": "2022-03-31T10:50:34-05:00",
+    "input_file": {}
+  },
+  {
     "path": "posts/2022-01-16-oddsratiodichotomize/",
     "title": "Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria",
     "description": "A short simulation example showing why dichomization of continuous variables can lead to wrong conclusions.",
