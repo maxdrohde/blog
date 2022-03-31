@@ -1,7 +1,8 @@
 ---
-title: "Getting started with the `tmerge` function in the `survival` package"
+draft: true
+title: "Getting started with the tmerge() function in the survival package"
 description: |
-  The `tmerge` function is used to structure data to represent time-dependent variables in a survival analysis. The post shows a minimal example of how to use `tmerge`.
+  The tmerge() function is used to structure data to represent time-dependent variables in a survival analysis. The post shows a minimal example of how to use tmerge.
 author:
   - name: Maximilian Rohde
     url: https://maximilianrohde.com
@@ -11,17 +12,19 @@ output:
     self_contained: false
 ---
 
+## Load packages
+
 ```{r}
 library(tidyverse)
 library(survival)
 ```
 
-# Why do we need `tmerge`?
+## Why do we need `tmerge`?
 
 - talk about what time-dep variable are
 
-# A simple dataset
+## A simple dataset
 
-# Using `tmerge`
+## Using `tmerge`
 
 
