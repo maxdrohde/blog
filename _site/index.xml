@@ -11,7 +11,15 @@
       <link>https://maximilianrohde.com</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 31 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Using the tmerge() function to structure time-dependent covariates for survival analysis</title>
+      <dc:creator>Maximilian Rohde</dc:creator>
+      <link>https://maximilianrohde.com/posts/2022-03-31-tmerge</link>
+      <description>The tmerge() function in the survival package is used to structure data to represent time-dependent variables in a survival analysis. This post shows a minimal example of how to use tmerge.</description>
+      <guid>https://maximilianrohde.com/posts/2022-03-31-tmerge</guid>
+      <pubDate>Thu, 31 Mar 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Sensitivity of odds-ratios calculated on dichotomized variables to inclusion criteria</title>
       <dc:creator>Maximilian Rohde</dc:creator>
@@ -46,15 +54,6 @@
       <guid>https://maximilianrohde.com/posts/2021-01-13-robustestimators</guid>
       <pubDate>Wed, 13 Jan 2021 00:00:00 +0000</pubDate>
       <media:content url="https://maximilianrohde.com/posts/2021-01-13-robustestimators/robustestimators_files/figure-html5/unnamed-chunk-13-1.png" medium="image" type="image/png" width="1248" height="768"/>
-    </item>
-    <item>
-      <title>Using gganimate with ggmap</title>
-      <dc:creator>Maximilian Rohde</dc:creator>
-      <link>https://maximilianrohde.com/posts/2021-01-06-gganimatemap</link>
-      <description>Combining gganimate with ggmap can be used to create animations of geographic data. I give a few examples using data from Nashville Open Data.</description>
-      <guid>https://maximilianrohde.com/posts/2021-01-06-gganimatemap</guid>
-      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
-      <media:content url="https://maximilianrohde.com/posts/2021-01-06-gganimatemap/preview.jpg" medium="image" type="image/jpeg"/>
     </item>
   </channel>
 </rss>
