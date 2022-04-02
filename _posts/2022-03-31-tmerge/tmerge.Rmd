@@ -27,7 +27,7 @@ As an example, assume we are modeling time-to-death in years, with exposure to a
 
 To represent time-dependent covariates, we need to have multiple rows for each subject, where each row represents a different value of the time dependent covariates.
 
-Take for example a subject who started with `exposure = 1`. Then at 4 years, their exposure status changed to `exposure = 0`. Then at 7 years, their exposure status changed to `exposure = 2`. Then the subject died at 10 years (i.e., `status = 1`). We would need three rows to represent this subject, since there are 3 distinct time periods: `0-4`, `4-7`, and `7-10`. The `survival` package uses the names `tstart` and `tstop` to denote the beginning and end of each time period. So when structure data from time-dependent variables, the rows for this subject would look like this:
+Take for example a subject who started with `exposure = 1`. Then at 4 years, their exposure status changed to `exposure = 0`. Then at 7 years, their exposure status changed to `exposure = 2`. Then the subject died at 10 years (i.e., `status = 1`). We would need three rows to represent this subject, since there are 3 distinct time periods: `0-4`, `4-7`, and `7-10`. The `survival` package uses the names `tstart` and `tstop` to denote the beginning and end of each time period. So when structuring data from time-dependent variables, the rows for this subject would look like this:
 
 ```{r, echo=FALSE}
 df <-
